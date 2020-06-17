@@ -1,0 +1,147 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Waiqinjiemian</title>
+    <link href="~/UI/themes/icon.css" rel="stylesheet" />
+    <link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.11.2.min.js"></script>
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+    <style type="text/css">
+          #bigdiv {
+            background-image: url('../Imges/320433.jpg');
+            background-image: 200px;
+            width:100%;
+            height:100%;
+        }
+        ul li {
+         list-style:none;
+        }
+       #yijian {
+            width: 200px;
+            height: 80px;
+        }
+
+        #win {
+            width: 400px;
+            height: 250px;
+            margin: 0 auto;
+        }
+
+            #win span {
+                margin: 2px 5px;
+                width: 230px;
+                height: 40px;
+                padding-left: 20px;
+                display: block;
+                line-height: 50px;
+            }
+
+                #win span a {
+                    padding-left: 50px;
+                }
+
+        #yijian {
+            margin-left: 10px;
+        }
+
+        #qd {
+            margin: 10px 60px;
+        }
+    </style>
+   
+
+    <div id="bigdiv">
+        <div id="win">
+            <p></p>
+            <span>@Html.RadioButton("rad1", "部门同意", true) 部门同意 <a>@Html.RadioButton("rad1", "部门不同意") 部门不同意</a></span>
+            <p>意见:<input type="text" id="yijian" name="yijian" /></p>
+        </div>
+        <table id="BMtiaoxiuList"></table>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#BMtiaoxiuList").datagrid({
+                url: '/Waiqin/WaiqinList',
+                columns: [[
+                    { field: 'ApplyID', title: '序号', width: 100, align: 'center', sortable: true },
+                    { field: 'UserName', title: '申请人', width: 100, align: 'center' },
+                    { field: 'DeptName', title: '部门', width: 100, align: 'center' },
+                    { field: 'kaishi', title: '起止时间', width: 200, align: 'center', sortable: true },
+                    { field: 'jieshu', title: '结束时间', width: 200, align: 'center', sortable: true },
+                    { field: 'Applydizhi', title: '外勤地', width: 300, align: 'center' },
+                    { field: 'ApplyLiyou', title: '外勤事由', width: 100, align: 'center' },
+                    {
+                        field: 'BumenShenHe', title: '审核', width: 100, align: 'center', formatter: function (value, row, index) {
+                            return "<button onclick='dakaichuangti()' id='" + row.ApplyID + "'>" + value + "<script>  function dakaichuangti() {$('#win').dialog('open'); }" + " <" + "/script></button> ";
+                        }
+                    }
+                ]],
+                fitColumns: true,
+                pagination: true,
+                pageNumber: 1,
+                pageSize: 5,
+                pageList: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+
+            })
+
+
+            //窗口面板tb
+            $('#win').dialog({
+                title: '审核',
+                modal: true,
+                closed: true,
+                width: 280,
+                height: 260,
+                collapsed: false,
+                buttons: [{
+                    text: '确定',
+                    handler: function () {
+                        //获取要审核的记录编号
+                        var row = $("#TiaoXiuList").datagrid("getSelected");
+                        if (row.length == 0) {
+                            $.messager.alert("提示", "请选择要审核的人员")
+                        } else {
+                            var id = row.ApplyID;
+                            var ra = $('[name="rad1"]:checked').val();
+                            console.info(ra);
+                            $.ajax({
+                                url: "/Waiqin/WaiqinShenHe",
+                                type: 'post',
+                                data: {
+                                    'id': id,
+                                    'rad': ra,
+                                },
+                                success: function (result) {
+                                    $("#TiaoXiuList").datagrid("reload");
+                                    $("#TiaoXiuList").datagrid("clearSelections");
+                                    $('#win').dialog('close');
+                                }
+
+                            })
+                        }
+
+
+
+                    }
+                }, {
+                    text: '关闭',
+                    handler: function () {
+                        $('#win').dialog('close');
+                    }
+                }]
+            });
+
+        })
+    </script>
+</body>
+</html>

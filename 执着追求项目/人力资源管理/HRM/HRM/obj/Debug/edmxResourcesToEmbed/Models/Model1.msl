@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HrmDBModel2StoreContainer" CdmEntityContainer="HrmDBEntities3">
+    <EntitySetMapping Name="Apply_jiludan">
+      <EntityTypeMapping TypeName="HrmDBModel2.Apply_jiludan">
+        <MappingFragment StoreEntitySet="Apply_jiludan">
+          <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+          <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+          <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+          <ScalarProperty Name="Applyyuanyin" ColumnName="Applyyuanyin" />
+          <ScalarProperty Name="ApplyType" ColumnName="ApplyType" />
+          <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+          <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Apply_Type">
+      <EntityTypeMapping TypeName="HrmDBModel2.Apply_Type">
+        <MappingFragment StoreEntitySet="Apply_Type">
+          <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+          <ScalarProperty Name="AttendanceName" ColumnName="AttendanceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chuchai">
+      <EntityTypeMapping TypeName="HrmDBModel2.Chuchai">
+        <MappingFragment StoreEntitySet="Chuchai">
+          <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Applydizhi" ColumnName="Applydizhi" />
+          <ScalarProperty Name="ApplyLiyou" ColumnName="ApplyLiyou" />
+          <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+          <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+          <ScalarProperty Name="ApplyJieguo" ColumnName="ApplyJieguo" />
+          <ScalarProperty Name="ApplyZhichi" ColumnName="ApplyZhichi" />
+          <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+          <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dept_bumen">
+      <EntityTypeMapping TypeName="HrmDBModel2.Dept_bumen">
+        <MappingFragment StoreEntitySet="Dept_bumen">
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Module_quanxian">
+      <EntityTypeMapping TypeName="HrmDBModel2.Module_quanxian">
+        <MappingFragment StoreEntitySet="Module_quanxian">
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role_juese">
+      <EntityTypeMapping TypeName="HrmDBModel2.Role_juese">
+        <MappingFragment StoreEntitySet="Role_juese">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tiaoxiu">
+      <EntityTypeMapping TypeName="HrmDBModel2.Tiaoxiu">
+        <MappingFragment StoreEntitySet="Tiaoxiu">
+          <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+          <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+          <ScalarProperty Name="Applyanpai" ColumnName="Applyanpai" />
+          <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+          <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_YG">
+      <EntityTypeMapping TypeName="HrmDBModel2.User_YG">
+        <MappingFragment StoreEntitySet="User_YG">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GhaoID" ColumnName="GhaoID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="IDCar" ColumnName="IDCar" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Starttime" ColumnName="Starttime" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="mibaowenti" ColumnName="mibaowenti" />
+          <ScalarProperty Name="mimapwd" ColumnName="mimapwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Waiqing">
+      <EntityTypeMapping TypeName="HrmDBModel2.Waiqing">
+        <MappingFragment StoreEntitySet="Waiqing">
+          <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+          <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+          <ScalarProperty Name="Applydizhi" ColumnName="Applydizhi" />
+          <ScalarProperty Name="ApplyLiyou" ColumnName="ApplyLiyou" />
+          <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+          <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Chuchai">
+      <EntityTypeMapping TypeName="HrmDBModel2.View_Chuchai">
+        <MappingFragment StoreEntitySet="View_Chuchai">
+          <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Applydizhi" ColumnName="Applydizhi" />
+          <ScalarProperty Name="ApplyLiyou" ColumnName="ApplyLiyou" />
+          <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+          <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+          <ScalarProperty Name="ApplyJieguo" ColumnName="ApplyJieguo" />
+          <ScalarProperty Name="ApplyZhichi" ColumnName="ApplyZhichi" />
+          <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+          <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_QJlist">
+      <EntityTypeMapping TypeName="HrmDBModel2.View_QJlist">
+        <MappingFragment StoreEntitySet="View_QJlist">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+          <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+          <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+          <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+          <ScalarProperty Name="Applyyuanyin" ColumnName="Applyyuanyin" />
+          <ScalarProperty Name="ApplyType" ColumnName="ApplyType" />
+          <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+          <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Tiaoxiu">
+      <EntityTypeMapping TypeName="HrmDBModel2.View_Tiaoxiu">
+        <MappingFragment StoreEntitySet="View_Tiaoxiu">
+          <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+          <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+          <ScalarProperty Name="Applyanpai" ColumnName="Applyanpai" />
+          <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+          <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Waiqin">
+      <EntityTypeMapping TypeName="HrmDBModel2.View_Waiqin">
+        <MappingFragment StoreEntitySet="View_Waiqin">
+          <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+          <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+          <ScalarProperty Name="Applydizhi" ColumnName="Applydizhi" />
+          <ScalarProperty Name="ApplyLiyou" ColumnName="ApplyLiyou" />
+          <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+          <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_YG">
+      <EntityTypeMapping TypeName="HrmDBModel2.View_YG">
+        <MappingFragment StoreEntitySet="View_YG">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GhaoID" ColumnName="GhaoID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="IDCar" ColumnName="IDCar" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Starttime" ColumnName="Starttime" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="mibaowenti" ColumnName="mibaowenti" />
+          <ScalarProperty Name="mimapwd" ColumnName="mimapwd" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_add_chuchai" FunctionName="HrmDBModel2.Store.proc_add_chuchai" />
+    <FunctionImportMapping FunctionImportName="proc_add_qj" FunctionName="HrmDBModel2.Store.proc_add_qj" />
+    <FunctionImportMapping FunctionImportName="proc_add_tiaoxiu" FunctionName="HrmDBModel2.Store.proc_add_tiaoxiu" />
+    <FunctionImportMapping FunctionImportName="proc_add_waiqin" FunctionName="HrmDBModel2.Store.proc_add_waiqin" />
+    <FunctionImportMapping FunctionImportName="proc_select_qj" FunctionName="HrmDBModel2.Store.proc_select_qj" />
+    <FunctionImportMapping FunctionImportName="proc_update_mima" FunctionName="HrmDBModel2.Store.proc_update_mima" />
+    <FunctionImportMapping FunctionImportName="proc_update_yg" FunctionName="HrmDBModel2.Store.proc_update_yg" />
+    <EntitySetMapping Name="qiandao">
+      <EntityTypeMapping TypeName="HrmDBModel2.qiandao">
+        <MappingFragment StoreEntitySet="qiandao">
+          <ScalarProperty Name="FQQDZ" ColumnName="FQQDZ" />
+          <ScalarProperty Name="QDstate" ColumnName="QDstate" />
+          <ScalarProperty Name="QDtime" ColumnName="QDtime" />
+          <ScalarProperty Name="QDZ" ColumnName="QDZ" />
+          <ScalarProperty Name="QDtitle" ColumnName="QDtitle" />
+          <ScalarProperty Name="QDid" ColumnName="QDid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

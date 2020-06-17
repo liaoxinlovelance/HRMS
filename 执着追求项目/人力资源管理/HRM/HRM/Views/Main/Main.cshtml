@@ -1,0 +1,501 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+     <title>首页</title>
+    <link href="~/UI/themes/icon.css" rel="stylesheet" />
+    <link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.11.2.min.js"></script>
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/CSS/titletime.css" rel="stylesheet" />
+</head>
+<body class="easyui-layout">   
+    <style type="text/css">
+        #caidan {
+        background-image:url('../Imges/320433.jpg');
+        /*background-image:200px;*/
+        }
+    </style>
+    <div style=" background-image:url('../Imges/320433.jpg'); background-image:120px;" data-options="region:'north',border:false" style="height:100px;background:#0099C8;padding:10px;">
+          <div id="container">
+            <p><a href="#"><marquee dirction="left" scrolldelay="1">热血牌人力资源管理系统</marquee></a></p>
+        </div>
+    </div>   
+    <div id="caidan" data-options="region:'south',border:false" style="height:50px;background:#ccc;padding :1px;">
+        <div id="quanxian" style="display:none">@ViewBag.quanxian</div>
+        <h4 style="text-align:center;line-height:inherit;">湖南安全软件1701班版权</h4>
+    </div>   
+       
+    <div id="caidan" data-options="region:'west',title:'菜单栏',split:true" style="width:200px;padding :10px;">
+        <ul id="tree1"></ul>  
+    </div>   
+    <div id="caidan" data-options="region:'center',title:'操作区域'"id="mainPanle" style="overflow:hidden;">
+        <div id="tab1" class="easyui-tabs">
+            <h5> <span style="font-size:20px">欢迎您！尊敬的</span> <span style="color:red;font-size:25px">@ViewBag.quanxian：
+             </span><span style="color:red;font-size:25px">@ViewBag.name</span><span style="font-size:20px">今天是：@ViewBag.time</span>&nbsp;&nbsp;&nbsp;<a href="/Home/Login">退出</a></h5>
+      
+        </div>  
+
+    </div>  
+   
+    <script>
+        $(function () {
+            var quanxian = $("#quanxian").html();
+            console.info(quanxian);
+            switch (quanxian) {
+                case "admin":
+                    var menu = [{
+                        "id": 1,
+                        "text": "管理员管理",
+                        "iconCls": "icon-save",
+                        "children": [{
+                            "id": 11,
+                            "text": "个人中心",
+                            "children": [{
+                                "id": 111,
+                                "text": "安全设置",
+                                attributes: {
+                                    url: "../Admin/anquan"
+                                }
+                            }, {
+                                "id": 112,
+                                "text": "打卡",
+                                attributes: {
+                                    url: "../QD/DaKa?name=@ViewBag.name"
+                                }
+                            }]
+                        },
+                        {
+                            "id": 12,
+                            "text": "系统管理",
+                            "children": [
+                            //    {
+                            //    "id": 121,
+                            //    "text": "维护角色信息",
+                            //    attributes: {
+                            //        url: ""
+                            //    }
+                            //}
+                            //,
+                            {
+                                "id": 122,
+                                "text": "维护用户信息",
+                                attributes: {
+                                    url: "../Admin/admin"
+                                }
+                            }]
+                        }]
+                    }
+
+                    ];
+                    break;
+                case "人事专员":
+                    var menu = [{
+                        "id": 1,
+                        "text": "人事管理",
+                        "iconCls": "icon-save",
+                        "children": [{
+                            "id": 11,
+                            "text": "个人中心",
+                            "children": [{
+                                "id": 111,
+                                "text": "安全设置",
+                                attributes: {
+                                    url: "../Admin/anquan"
+                                }
+                            }, {
+                                "id": 112,
+                                "text": "打卡",
+                                attributes: {
+                                    url: "../QD/DaKa?name=@ViewBag.name"
+                                }
+                            }]
+                        }
+                        //, {
+                        //    "id": 12,
+                        //    "text": "员工管理",
+                        //    "children": [{
+                        //        "id": 121,
+                        //        "text": "维护员工信息",
+                        //        attributes: {
+                        //            url: ""
+                        //        }
+                        //    }, {
+                        //        "id": 122,
+                        //        "text": "调阅员工信息",
+                        //        attributes: {
+                        //            url: ""
+                        //        }
+                        //    }, {
+                        //        "id": 123,
+                        //        "text": "汇总员工信息",
+                        //        attributes: {
+                        //            url: ""
+                        //        }
+                        //    }]
+                        //}
+                        ,
+                        {
+                            "id": 13,
+                            "text": "考勤申请",
+                            "children": [{
+                                "id": 131,
+                                "text": "休假申请",
+                                attributes: {
+                                    url: "/Staff/appraisal"
+                                }
+                            }
+                            //, {
+                            //    "id": 132,
+                            //    "text": "缺打卡申请",
+                            //    attributes: {
+                            //        url: ""
+                            //    }
+                            //}
+                            , {
+                                "id": 133,
+                                "text": "调休申请",
+                                attributes: {
+                                    url: "/Tiaoxiu/tiaoxiu"
+                                }
+                            }, {
+                                "id": 134,
+                                "text": "外勤申请",
+                                attributes: {
+                                    url: "/Waiqin/waiqin"
+                                }
+                            }, {
+                                "id": 135,
+                                "text": "出差申请",
+                                attributes: {
+                                    url: "/Chuchai/chuachai"
+                                }
+                            }]
+                        },
+                         {
+                             "id": 14,
+                             "text": "考勤管理",
+                             "children": [
+                                 {
+                                 "id": 121,
+                                 "text": "调阅考勤记录",
+                                 attributes: {
+                                     url: "/QD/zhuzhuangtu"
+                                 }
+                             }
+                             ,
+                             {
+                                 "id": 122,
+                                 "text": "发起签到",
+                                 attributes: {
+                                     url: "/QD/FQqiandao?name=@ViewBag.name"
+                                }
+                            }, {
+                                "id": 123,
+                                "text": "调阅签到记录",
+                                attributes: {
+                                    url: "/QD/chayue"
+                                }
+                            }]
+                         }
+                        ]
+                    }];
+                    break;
+                case "部门员工":
+                    var menu = [{
+                        "id": 1,
+                        "text": "部门员工",
+                        "iconCls": "icon-save",
+                        "children": [{
+                            "id": 11,
+                            "text": "个人中心",
+                            "children": [{
+                                "id": 111,
+                                "text": "安全设置",
+                                attributes: {
+                                    url: "../Admin/anquan"
+                                }
+                            }, {
+                                "id": 112,
+                                "text": "打卡",
+                                attributes: {
+                                    url: "../QD/DaKa?name=@ViewBag.name"
+                                }
+                            }]
+                        }, {
+                            "id": 12,
+                            "text": "考勤申请",
+                            "children": [{
+                                "id": 121,
+                                "text": "休假申请",
+                                attributes: {
+                                    url: "/Staff/appraisal"
+                                }
+                            }
+
+                            //,
+                            //{
+                            //    "id": 122,
+                            //    "text": "缺打卡申请",
+                            //    attributes: {
+                            //        url: ""
+                            //    }
+                            //}
+                            , {
+                                "id": 123,
+                                "text": "调休申请",
+                                attributes: {
+                                    url: "/Tiaoxiu/tiaoxiu"
+                                }
+                            }, {
+                                "id": 124,
+                                "text": "外勤申请",
+                                attributes: {
+                                    url: "/Waiqin/waiqin"
+                                }
+                            }, {
+                                "id": 125,
+                                "text": "出差申请",
+                                attributes: {
+                                    url: "/Chuchai/chuachai"
+                                }
+                            }]
+                        }]
+                    }];
+                    break;
+                case "部门主管":
+                    var menu = [{
+                        "id": 1,
+                        "text": "部门主管",
+                        "iconCls": "icon-save",
+                        "children": [{
+                            "id": 11,
+                            "text": "个人中心",
+                            "children": [{
+                                "id": 111,
+                                "text": "安全设置",
+                                attributes: {
+                                    url: "../Admin/anquan"
+                                }
+                            }, {
+                                "id": 112,
+                                "text": "打卡",
+                                attributes: {
+                                    url: "../QD/DaKa?name=@ViewBag.name"
+                                }
+                            }]
+                        }, {
+                            "id": 12,
+                            "text": "考勤申请",
+                            "children": [{
+                                "id": 121,
+                                "text": "休假申请",
+                                attributes: {
+                                    url: "/Staff/appraisal"
+                                }
+                            }
+                            //,
+                            //{
+                            //    "id": 122,
+                            //    "text": "缺打卡申请",
+                            //    attributes: {
+                            //        url: ""
+                            //    }
+                            //}
+                            , {
+                                "id": 123,
+                                "text": "调休申请",
+                                attributes: {
+                                    url: "/Tiaoxiu/tiaoxiu"
+                                }
+                            }, {
+                                "id": 124,
+                                "text": "外勤申请",
+                                attributes: {
+                                    url: "/Waiqin/waiqin"
+                                }
+                            }, {
+                                "id": 125,
+                                "text": "出差申请",
+                                attributes: {
+                                    url: "/Chuchai/chuachai"
+                                }
+                            }]
+                        }, {
+                            "id": 13,
+                            "text": "考勤管理",
+                            "children": [{
+                                "id": 131,
+                                "text": "休假申请考核",
+                                attributes: {
+                                    url: "/BuMen/XiuJia"
+                                }
+                            }
+                            //, {
+                            //    "id": 131,
+                            //    "text": "缺打卡申请考核",
+                            //    attributes: {
+                            //        url: ""
+                            //    }
+                            //}
+                            , {
+                                "id": 131,
+                                "text": "调休申请考核",
+                                attributes: {
+                                    url: "/Tiaoxiu/Tiaoxiujiemian"
+                                }
+                            }, {
+                                "id": 131,
+                                "text": "外勤申请考核",
+                                attributes: {
+                                    url: "/Waiqin/Waiqinjiemian"
+                                }
+                            }, {
+                                "id": 132,
+                                "text": "出差申请考核",
+                                attributes: {
+                                    url: "/Chuchai/Chuchaijiemian"
+                                }
+                            }]
+                        }
+                        ]
+                    }];
+                    break;
+                case "校区主任":
+                    var menu = [{
+                        "id": 1,
+                        "text": "校区主任",
+                        "iconCls": "icon-save",
+                        "children": [{
+                            "id": 11,
+                            "text": "个人中心",
+                            "children": [{
+                                "id": 111,
+                                "text": "安全设置",
+                                attributes: {
+                                    url: "../Admin/anquan"
+                                }
+                            }, {
+                                "id": 112,
+                                "text": "打卡",
+                                attributes: {
+                                    url: "../QD/DaKa?name=@ViewBag.name"
+                                }
+                            }]
+                        }, {
+                            "id": 12,
+                            "text": "考勤申请",
+                            "children": [{
+                                "id": 121,
+                                "text": "休假申请",
+                                attributes: {
+                                    url: "/Staff/appraisal"
+                                }
+                            }
+                            //, {
+                            //    "id": 122,
+                            //    "text": "缺打卡申请",
+                            //    attributes: {
+                            //        url: ""
+                            //    }
+                            //}
+                            ,
+                            {
+                                "id": 123,
+                                "text": "调休申请",
+                                attributes: {
+                                    url: "/Tiaoxiu/tiaoxiu"
+                                }
+                            }, {
+                                "id": 124,
+                                "text": "外勤申请",
+                                attributes: {
+                                    url: "/Waiqin/waiqin"
+                                }
+                            }, {
+                                "id": 125,
+                                "text": "出差申请",
+                                attributes: {
+                                    url: "/Chuchai/chuachai"
+                                }
+                            }]
+                        }, {
+                            "id": 13,
+                            "text": "考勤管理",
+                            "children": [{
+                                "id": 131,
+                                "text": "休假申请考核",
+                                attributes: {
+                                    url: "../KHguanli/XiuJia"
+                                }
+                            }, {
+                                "id": 131,
+                                "text": "缺打卡申请考核",
+                                attributes: {
+                                    url: "../ZhurenKQGL/Dakakaohe"
+                                }
+                            }, {
+                                "id": 131,
+                                "text": "调休申请考核",
+                                attributes: {
+                                    url: "/Tiaoxiu/TiaoxiujiemianXQ"
+                                }
+                            }, {
+                                "id": 131,
+                                "text": "外勤申请考核",
+                                attributes: {
+                                    url: "/Waiqin/WaiqinjiemianXQ"
+                                }
+                            }, {
+                                "id": 132,
+                                "text": "出差申请考核",
+                                attributes: {
+                                    url: "/Chuchai/ChuchaijiemianXQ"
+                                }
+                            }]
+                        }
+                        ]
+                    }];
+                    break;
+                default:
+
+            }
+
+            $('#tree1').tree({
+                data: menu,//指明tree的数据源
+                onClick: function (node) {
+                    console.info(node.text);//获得节点的text属性值
+                    //判断当前点击的是根节点还是子节点
+                    if (node.attributes == null) {
+                        //根节点
+                    }
+                    else {
+                        var url = node.attributes.url;//获得节点中自定义属性里面的url属性值
+                        console.info(url);
+                        if ($("#tab1").tabs('exists', node.text)) {
+                            $("#tab1").tabs('select', node.text)
+                        }
+                        else {
+                            //在tabs中添加选项卡
+                            $("#tab1").tabs('add', {
+                                title: node.text,
+                                href: node.attributes.url,
+                                closable: true
+                            })
+                        }
+                    }
+                }
+            });
+            $("#tab1").tabs({
+                fit: true
+            })
+        });
+    </script> 
+</body>  
+</html>

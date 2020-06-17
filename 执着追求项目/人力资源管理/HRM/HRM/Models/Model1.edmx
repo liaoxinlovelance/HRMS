@@ -1,0 +1,1293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HrmDBModel2.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="HrmDBModel2StoreContainer">
+          <EntitySet Name="Apply_jiludan" EntityType="HrmDBModel2.Store.Apply_jiludan" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Apply_Type" EntityType="HrmDBModel2.Store.Apply_Type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Chuchai" EntityType="HrmDBModel2.Store.Chuchai" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Dept_bumen" EntityType="HrmDBModel2.Store.Dept_bumen" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Module_quanxian" EntityType="HrmDBModel2.Store.Module_quanxian" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="qiandao" EntityType="HrmDBModel2.Store.qiandao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role_juese" EntityType="HrmDBModel2.Store.Role_juese" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tiaoxiu" EntityType="HrmDBModel2.Store.Tiaoxiu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User_YG" EntityType="HrmDBModel2.Store.User_YG" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Waiqing" EntityType="HrmDBModel2.Store.Waiqing" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="View_Chuchai" EntityType="HrmDBModel2.Store.View_Chuchai" store:Type="Views" store:Schema="dbo" store:Name="View_Chuchai">
+            <DefiningQuery>SELECT 
+      [View_Chuchai].[ApplyID] AS [ApplyID], 
+      [View_Chuchai].[UserID] AS [UserID], 
+      [View_Chuchai].[Applydizhi] AS [Applydizhi], 
+      [View_Chuchai].[ApplyLiyou] AS [ApplyLiyou], 
+      [View_Chuchai].[Applykaishi] AS [Applykaishi], 
+      [View_Chuchai].[Applyjieshu] AS [Applyjieshu], 
+      [View_Chuchai].[ApplyJieguo] AS [ApplyJieguo], 
+      [View_Chuchai].[ApplyZhichi] AS [ApplyZhichi], 
+      [View_Chuchai].[BumenShenHe] AS [BumenShenHe], 
+      [View_Chuchai].[XiaoquShenHe] AS [XiaoquShenHe], 
+      [View_Chuchai].[DeptName] AS [DeptName], 
+      [View_Chuchai].[UserName] AS [UserName]
+      FROM [dbo].[View_Chuchai] AS [View_Chuchai]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_QJlist" EntityType="HrmDBModel2.Store.View_QJlist" store:Type="Views" store:Schema="dbo" store:Name="View_QJlist">
+            <DefiningQuery>SELECT 
+      [View_QJlist].[UserName] AS [UserName], 
+      [View_QJlist].[DeptName] AS [DeptName], 
+      [View_QJlist].[ApplyID] AS [ApplyID], 
+      [View_QJlist].[UserID] AS [UserID], 
+      [View_QJlist].[AttendanceID] AS [AttendanceID], 
+      [View_QJlist].[Applykaishi] AS [Applykaishi], 
+      [View_QJlist].[Applyjieshu] AS [Applyjieshu], 
+      [View_QJlist].[Applyyuanyin] AS [Applyyuanyin], 
+      [View_QJlist].[ApplyType] AS [ApplyType], 
+      [View_QJlist].[BumenShenHe] AS [BumenShenHe], 
+      [View_QJlist].[XiaoquShenHe] AS [XiaoquShenHe]
+      FROM [dbo].[View_QJlist] AS [View_QJlist]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Tiaoxiu" EntityType="HrmDBModel2.Store.View_Tiaoxiu" store:Type="Views" store:Schema="dbo" store:Name="View_Tiaoxiu">
+            <DefiningQuery>SELECT 
+      [View_Tiaoxiu].[ApplyID] AS [ApplyID], 
+      [View_Tiaoxiu].[UserID] AS [UserID], 
+      [View_Tiaoxiu].[Applykaishi] AS [Applykaishi], 
+      [View_Tiaoxiu].[Applyjieshu] AS [Applyjieshu], 
+      [View_Tiaoxiu].[Applyanpai] AS [Applyanpai], 
+      [View_Tiaoxiu].[BumenShenHe] AS [BumenShenHe], 
+      [View_Tiaoxiu].[XiaoquShenHe] AS [XiaoquShenHe], 
+      [View_Tiaoxiu].[UserName] AS [UserName], 
+      [View_Tiaoxiu].[DeptName] AS [DeptName]
+      FROM [dbo].[View_Tiaoxiu] AS [View_Tiaoxiu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Waiqin" EntityType="HrmDBModel2.Store.View_Waiqin" store:Type="Views" store:Schema="dbo" store:Name="View_Waiqin">
+            <DefiningQuery>SELECT 
+      [View_Waiqin].[ApplyID] AS [ApplyID], 
+      [View_Waiqin].[UserID] AS [UserID], 
+      [View_Waiqin].[Applykaishi] AS [Applykaishi], 
+      [View_Waiqin].[Applyjieshu] AS [Applyjieshu], 
+      [View_Waiqin].[Applydizhi] AS [Applydizhi], 
+      [View_Waiqin].[ApplyLiyou] AS [ApplyLiyou], 
+      [View_Waiqin].[BumenShenHe] AS [BumenShenHe], 
+      [View_Waiqin].[XiaoquShenHe] AS [XiaoquShenHe], 
+      [View_Waiqin].[UserName] AS [UserName], 
+      [View_Waiqin].[DeptName] AS [DeptName]
+      FROM [dbo].[View_Waiqin] AS [View_Waiqin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_YG" EntityType="HrmDBModel2.Store.View_YG" store:Type="Views" store:Schema="dbo" store:Name="View_YG">
+            <DefiningQuery>SELECT 
+      [View_YG].[UserID] AS [UserID], 
+      [View_YG].[GhaoID] AS [GhaoID], 
+      [View_YG].[UserName] AS [UserName], 
+      [View_YG].[RoleID] AS [RoleID], 
+      [View_YG].[DeptID] AS [DeptID], 
+      [View_YG].[UserPwd] AS [UserPwd], 
+      [View_YG].[IDCar] AS [IDCar], 
+      [View_YG].[Sex] AS [Sex], 
+      [View_YG].[Age] AS [Age], 
+      [View_YG].[Starttime] AS [Starttime], 
+      [View_YG].[Education] AS [Education], 
+      [View_YG].[Salary] AS [Salary], 
+      [View_YG].[mibaowenti] AS [mibaowenti], 
+      [View_YG].[mimapwd] AS [mimapwd], 
+      [View_YG].[RoleName] AS [RoleName], 
+      [View_YG].[DeptName] AS [DeptName]
+      FROM [dbo].[View_YG] AS [View_YG]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Apply_jil__Atten__2B3F6F97" Association="HrmDBModel2.Store.FK__Apply_jil__Atten__2B3F6F97">
+            <End Role="Apply_Type" EntitySet="Apply_Type" />
+            <End Role="Apply_jiludan" EntitySet="Apply_jiludan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Apply_jil__UserI__2A4B4B5E" Association="HrmDBModel2.Store.FK__Apply_jil__UserI__2A4B4B5E">
+            <End Role="User_YG" EntitySet="User_YG" />
+            <End Role="Apply_jiludan" EntitySet="Apply_jiludan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Chuchai__UserID__251C81ED" Association="HrmDBModel2.Store.FK__Chuchai__UserID__251C81ED">
+            <End Role="User_YG" EntitySet="User_YG" />
+            <End Role="Chuchai" EntitySet="Chuchai" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Module_qu__TypeI__108B795B" Association="HrmDBModel2.Store.FK__Module_qu__TypeI__108B795B">
+            <End Role="Module_quanxian" EntitySet="Module_quanxian" />
+            <End Role="Module_quanxian1" EntitySet="Module_quanxian" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Role_jues__Modul__1DE57479" Association="HrmDBModel2.Store.FK__Role_jues__Modul__1DE57479">
+            <End Role="Module_quanxian" EntitySet="Module_quanxian" />
+            <End Role="Role_juese" EntitySet="Role_juese" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tiaoxiu__UserID__1B9317B3" Association="HrmDBModel2.Store.FK__Tiaoxiu__UserID__1B9317B3">
+            <End Role="User_YG" EntitySet="User_YG" />
+            <End Role="Tiaoxiu" EntitySet="Tiaoxiu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_YG__DeptID__239E4DCF" Association="HrmDBModel2.Store.FK__User_YG__DeptID__239E4DCF">
+            <End Role="Dept_bumen" EntitySet="Dept_bumen" />
+            <End Role="User_YG" EntitySet="User_YG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_YG__RoleID__22AA2996" Association="HrmDBModel2.Store.FK__User_YG__RoleID__22AA2996">
+            <End Role="Role_juese" EntitySet="Role_juese" />
+            <End Role="User_YG" EntitySet="User_YG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Waiqing__UserID__2057CCD0" Association="HrmDBModel2.Store.FK__Waiqing__UserID__2057CCD0">
+            <End Role="User_YG" EntitySet="User_YG" />
+            <End Role="Waiqing" EntitySet="Waiqing" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Apply_jiludan">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+          </Key>
+          <Property Name="ApplyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="AttendanceID" Type="int" Nullable="false" />
+          <Property Name="Applykaishi" Type="date" Nullable="false" />
+          <Property Name="Applyjieshu" Type="date" Nullable="false" />
+          <Property Name="Applyyuanyin" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ApplyType" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="BumenShenHe" Type="nvarchar" MaxLength="20" />
+          <Property Name="XiaoquShenHe" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Apply_Type">
+          <Key>
+            <PropertyRef Name="AttendanceID" />
+          </Key>
+          <Property Name="AttendanceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AttendanceName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Chuchai">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+          </Key>
+          <Property Name="ApplyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Applydizhi" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="ApplyLiyou" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Applykaishi" Type="date" Nullable="false" />
+          <Property Name="Applyjieshu" Type="date" Nullable="false" />
+          <Property Name="ApplyJieguo" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ApplyZhichi" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="BumenShenHe" Type="nvarchar" MaxLength="20" />
+          <Property Name="XiaoquShenHe" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Dept_bumen">
+          <Key>
+            <PropertyRef Name="DeptID" />
+          </Key>
+          <Property Name="DeptID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DeptName" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Module_quanxian">
+          <Key>
+            <PropertyRef Name="ModuleID" />
+          </Key>
+          <Property Name="ModuleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ModuleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TypeID" Type="int" />
+        </EntityType>
+        <EntityType Name="qiandao">
+          <Key>
+            <PropertyRef Name="QDid" />
+          </Key>
+          <Property Name="QDid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="QDtitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="QDZ" Type="nvarchar(max)" />
+          <Property Name="QDtime" Type="datetime" />
+          <Property Name="QDstate" Type="bit" />
+          <Property Name="FQQDZ" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Role_juese">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModuleID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tiaoxiu">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+          </Key>
+          <Property Name="ApplyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Applykaishi" Type="date" Nullable="false" />
+          <Property Name="Applyjieshu" Type="date" Nullable="false" />
+          <Property Name="Applyanpai" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="BumenShenHe" Type="nvarchar" MaxLength="20" />
+          <Property Name="XiaoquShenHe" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="User_YG">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GhaoID" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="DeptID" Type="int" Nullable="false" />
+          <Property Name="UserPwd" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="IDCar" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sex" Type="nvarchar" Nullable="false" MaxLength="4" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Starttime" Type="date" />
+          <Property Name="Education" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Salary" Type="money" Nullable="false" />
+          <Property Name="mibaowenti" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="mimapwd" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Waiqing">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+          </Key>
+          <Property Name="ApplyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Applykaishi" Type="date" Nullable="false" />
+          <Property Name="Applyjieshu" Type="date" Nullable="false" />
+          <Property Name="Applydizhi" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="ApplyLiyou" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="BumenShenHe" Type="nvarchar" MaxLength="20" />
+          <Property Name="XiaoquShenHe" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“HrmDB.dbo.View_Chuchai”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="View_Chuchai">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="Applydizhi" />
+            <PropertyRef Name="ApplyLiyou" />
+            <PropertyRef Name="Applykaishi" />
+            <PropertyRef Name="Applyjieshu" />
+            <PropertyRef Name="ApplyJieguo" />
+            <PropertyRef Name="ApplyZhichi" />
+            <PropertyRef Name="DeptName" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="ApplyID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Applydizhi" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="ApplyLiyou" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Applykaishi" Type="date" Nullable="false" />
+          <Property Name="Applyjieshu" Type="date" Nullable="false" />
+          <Property Name="ApplyJieguo" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ApplyZhichi" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="BumenShenHe" Type="nvarchar" MaxLength="20" />
+          <Property Name="XiaoquShenHe" Type="nvarchar" MaxLength="20" />
+          <Property Name="DeptName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“HrmDB.dbo.View_QJlist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="View_QJlist">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="DeptName" />
+            <PropertyRef Name="ApplyID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="AttendanceID" />
+            <PropertyRef Name="Applykaishi" />
+            <PropertyRef Name="Applyjieshu" />
+            <PropertyRef Name="Applyyuanyin" />
+            <PropertyRef Name="ApplyType" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="DeptName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="ApplyID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="AttendanceID" Type="int" Nullable="false" />
+          <Property Name="Applykaishi" Type="date" Nullable="false" />
+          <Property Name="Applyjieshu" Type="date" Nullable="false" />
+          <Property Name="Applyyuanyin" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ApplyType" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="BumenShenHe" Type="nvarchar" MaxLength="20" />
+          <Property Name="XiaoquShenHe" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“HrmDB.dbo.View_Tiaoxiu”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="View_Tiaoxiu">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="Applykaishi" />
+            <PropertyRef Name="Applyjieshu" />
+            <PropertyRef Name="Applyanpai" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="DeptName" />
+          </Key>
+          <Property Name="ApplyID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Applykaishi" Type="date" Nullable="false" />
+          <Property Name="Applyjieshu" Type="date" Nullable="false" />
+          <Property Name="Applyanpai" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="BumenShenHe" Type="nvarchar" MaxLength="20" />
+          <Property Name="XiaoquShenHe" Type="nvarchar" MaxLength="20" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="DeptName" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“HrmDB.dbo.View_Waiqin”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="View_Waiqin">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="Applykaishi" />
+            <PropertyRef Name="Applyjieshu" />
+            <PropertyRef Name="Applydizhi" />
+            <PropertyRef Name="ApplyLiyou" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="DeptName" />
+          </Key>
+          <Property Name="ApplyID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Applykaishi" Type="date" Nullable="false" />
+          <Property Name="Applyjieshu" Type="date" Nullable="false" />
+          <Property Name="Applydizhi" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="ApplyLiyou" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="BumenShenHe" Type="nvarchar" MaxLength="20" />
+          <Property Name="XiaoquShenHe" Type="nvarchar" MaxLength="20" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="DeptName" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“HrmDB.dbo.View_YG”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="View_YG">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="GhaoID" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="DeptID" />
+            <PropertyRef Name="UserPwd" />
+            <PropertyRef Name="IDCar" />
+            <PropertyRef Name="Sex" />
+            <PropertyRef Name="Age" />
+            <PropertyRef Name="Starttime" />
+            <PropertyRef Name="Education" />
+            <PropertyRef Name="Salary" />
+            <PropertyRef Name="mibaowenti" />
+            <PropertyRef Name="mimapwd" />
+            <PropertyRef Name="RoleName" />
+            <PropertyRef Name="DeptName" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="GhaoID" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="DeptID" Type="int" Nullable="false" />
+          <Property Name="UserPwd" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="IDCar" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sex" Type="nvarchar" Nullable="false" MaxLength="4" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Starttime" Type="date" Nullable="false" />
+          <Property Name="Education" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Salary" Type="money" Nullable="false" />
+          <Property Name="mibaowenti" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="mimapwd" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DeptName" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__Apply_jil__Atten__2B3F6F97">
+          <End Role="Apply_Type" Type="HrmDBModel2.Store.Apply_Type" Multiplicity="1" />
+          <End Role="Apply_jiludan" Type="HrmDBModel2.Store.Apply_jiludan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Apply_Type">
+              <PropertyRef Name="AttendanceID" />
+            </Principal>
+            <Dependent Role="Apply_jiludan">
+              <PropertyRef Name="AttendanceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Apply_jil__UserI__2A4B4B5E">
+          <End Role="User_YG" Type="HrmDBModel2.Store.User_YG" Multiplicity="1" />
+          <End Role="Apply_jiludan" Type="HrmDBModel2.Store.Apply_jiludan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_YG">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Apply_jiludan">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Chuchai__UserID__251C81ED">
+          <End Role="User_YG" Type="HrmDBModel2.Store.User_YG" Multiplicity="1" />
+          <End Role="Chuchai" Type="HrmDBModel2.Store.Chuchai" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_YG">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Chuchai">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Module_qu__TypeI__108B795B">
+          <End Role="Module_quanxian" Type="HrmDBModel2.Store.Module_quanxian" Multiplicity="0..1" />
+          <End Role="Module_quanxian1" Type="HrmDBModel2.Store.Module_quanxian" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Module_quanxian">
+              <PropertyRef Name="ModuleID" />
+            </Principal>
+            <Dependent Role="Module_quanxian1">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Role_jues__Modul__1DE57479">
+          <End Role="Module_quanxian" Type="HrmDBModel2.Store.Module_quanxian" Multiplicity="1" />
+          <End Role="Role_juese" Type="HrmDBModel2.Store.Role_juese" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Module_quanxian">
+              <PropertyRef Name="ModuleID" />
+            </Principal>
+            <Dependent Role="Role_juese">
+              <PropertyRef Name="ModuleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tiaoxiu__UserID__1B9317B3">
+          <End Role="User_YG" Type="HrmDBModel2.Store.User_YG" Multiplicity="1" />
+          <End Role="Tiaoxiu" Type="HrmDBModel2.Store.Tiaoxiu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_YG">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Tiaoxiu">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_YG__DeptID__239E4DCF">
+          <End Role="Dept_bumen" Type="HrmDBModel2.Store.Dept_bumen" Multiplicity="1" />
+          <End Role="User_YG" Type="HrmDBModel2.Store.User_YG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dept_bumen">
+              <PropertyRef Name="DeptID" />
+            </Principal>
+            <Dependent Role="User_YG">
+              <PropertyRef Name="DeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_YG__RoleID__22AA2996">
+          <End Role="Role_juese" Type="HrmDBModel2.Store.Role_juese" Multiplicity="1" />
+          <End Role="User_YG" Type="HrmDBModel2.Store.User_YG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role_juese">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="User_YG">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Waiqing__UserID__2057CCD0">
+          <End Role="User_YG" Type="HrmDBModel2.Store.User_YG" Multiplicity="1" />
+          <End Role="Waiqing" Type="HrmDBModel2.Store.Waiqing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_YG">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Waiqing">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="proc_add_chuchai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="dizhi" Type="nvarchar" Mode="In" />
+          <Parameter Name="liyou" Type="nvarchar" Mode="In" />
+          <Parameter Name="time1" Type="datetime" Mode="In" />
+          <Parameter Name="time2" Type="datetime" Mode="In" />
+          <Parameter Name="jieguo" Type="nvarchar" Mode="In" />
+          <Parameter Name="zhichi" Type="nvarchar" Mode="In" />
+          <Parameter Name="shenghe" Type="nvarchar" Mode="In" />
+          <Parameter Name="shenghe2" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="proc_add_qj" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="leixngid" Type="int" Mode="In" />
+          <Parameter Name="time1" Type="datetime" Mode="In" />
+          <Parameter Name="time2" Type="datetime" Mode="In" />
+          <Parameter Name="qjsy" Type="nvarchar" Mode="In" />
+          <Parameter Name="qjtype" Type="nvarchar" Mode="In" />
+          <Parameter Name="shenghe" Type="nvarchar" Mode="In" />
+          <Parameter Name="shenghe2" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="proc_add_tiaoxiu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="time1" Type="datetime" Mode="In" />
+          <Parameter Name="time2" Type="datetime" Mode="In" />
+          <Parameter Name="anpai" Type="nvarchar" Mode="In" />
+          <Parameter Name="shenghe" Type="nvarchar" Mode="In" />
+          <Parameter Name="shenghe2" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="proc_add_waiqin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="time1" Type="datetime" Mode="In" />
+          <Parameter Name="time2" Type="datetime" Mode="In" />
+          <Parameter Name="dizhi" Type="nvarchar" Mode="In" />
+          <Parameter Name="liyou" Type="nvarchar" Mode="In" />
+          <Parameter Name="shenghe" Type="nvarchar" Mode="In" />
+          <Parameter Name="shenghe2" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="proc_select_qj" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="proc_update_mima" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="uname" Type="nvarchar" Mode="In" />
+          <Parameter Name="newpwd" Type="nvarchar" Mode="In" />
+          <Parameter Name="hd1" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="proc_update_yg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="gonghao" Type="int" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="roid" Type="int" Mode="In" />
+          <Parameter Name="sex" Type="nvarchar" Mode="In" />
+          <Parameter Name="bumenid" Type="int" Mode="In" />
+          <Parameter Name="age" Type="int" Mode="In" />
+          <Parameter Name="xueli" Type="nvarchar" Mode="In" />
+          <Parameter Name="pwd" Type="nvarchar" Mode="In" />
+          <Parameter Name="idshenf" Type="nvarchar" Mode="In" />
+          <Parameter Name="gongzi" Type="money" Mode="In" />
+          <Parameter Name="mibaowenti" Type="nvarchar" Mode="In" />
+          <Parameter Name="mibaopwd" Type="nvarchar" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HrmDBModel2" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HrmDBEntities3" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Apply_jiludan" EntityType="HrmDBModel2.Apply_jiludan" />
+          <EntitySet Name="Apply_Type" EntityType="HrmDBModel2.Apply_Type" />
+          <EntitySet Name="Chuchai" EntityType="HrmDBModel2.Chuchai" />
+          <EntitySet Name="Dept_bumen" EntityType="HrmDBModel2.Dept_bumen" />
+          <EntitySet Name="Module_quanxian" EntityType="HrmDBModel2.Module_quanxian" />
+          <EntitySet Name="Role_juese" EntityType="HrmDBModel2.Role_juese" />
+          <EntitySet Name="Tiaoxiu" EntityType="HrmDBModel2.Tiaoxiu" />
+          <EntitySet Name="User_YG" EntityType="HrmDBModel2.User_YG" />
+          <EntitySet Name="Waiqing" EntityType="HrmDBModel2.Waiqing" />
+          <EntitySet Name="View_Chuchai" EntityType="HrmDBModel2.View_Chuchai" />
+          <EntitySet Name="View_QJlist" EntityType="HrmDBModel2.View_QJlist" />
+          <EntitySet Name="View_Tiaoxiu" EntityType="HrmDBModel2.View_Tiaoxiu" />
+          <EntitySet Name="View_Waiqin" EntityType="HrmDBModel2.View_Waiqin" />
+          <EntitySet Name="View_YG" EntityType="HrmDBModel2.View_YG" />
+          <AssociationSet Name="FK__Apply_jil__Atten__2B3F6F97" Association="HrmDBModel2.FK__Apply_jil__Atten__2B3F6F97">
+            <End Role="Apply_Type" EntitySet="Apply_Type" />
+            <End Role="Apply_jiludan" EntitySet="Apply_jiludan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Apply_jil__UserI__2A4B4B5E" Association="HrmDBModel2.FK__Apply_jil__UserI__2A4B4B5E">
+            <End Role="User_YG" EntitySet="User_YG" />
+            <End Role="Apply_jiludan" EntitySet="Apply_jiludan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Chuchai__UserID__251C81ED" Association="HrmDBModel2.FK__Chuchai__UserID__251C81ED">
+            <End Role="User_YG" EntitySet="User_YG" />
+            <End Role="Chuchai" EntitySet="Chuchai" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_YG__DeptID__239E4DCF" Association="HrmDBModel2.FK__User_YG__DeptID__239E4DCF">
+            <End Role="Dept_bumen" EntitySet="Dept_bumen" />
+            <End Role="User_YG" EntitySet="User_YG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Module_qu__TypeI__108B795B" Association="HrmDBModel2.FK__Module_qu__TypeI__108B795B">
+            <End Role="Module_quanxian" EntitySet="Module_quanxian" />
+            <End Role="Module_quanxian1" EntitySet="Module_quanxian" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Role_jues__Modul__1DE57479" Association="HrmDBModel2.FK__Role_jues__Modul__1DE57479">
+            <End Role="Module_quanxian" EntitySet="Module_quanxian" />
+            <End Role="Role_juese" EntitySet="Role_juese" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_YG__RoleID__22AA2996" Association="HrmDBModel2.FK__User_YG__RoleID__22AA2996">
+            <End Role="Role_juese" EntitySet="Role_juese" />
+            <End Role="User_YG" EntitySet="User_YG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tiaoxiu__UserID__1B9317B3" Association="HrmDBModel2.FK__Tiaoxiu__UserID__1B9317B3">
+            <End Role="User_YG" EntitySet="User_YG" />
+            <End Role="Tiaoxiu" EntitySet="Tiaoxiu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Waiqing__UserID__2057CCD0" Association="HrmDBModel2.FK__Waiqing__UserID__2057CCD0">
+            <End Role="User_YG" EntitySet="User_YG" />
+            <End Role="Waiqing" EntitySet="Waiqing" />
+          </AssociationSet>
+          <FunctionImport Name="proc_add_chuchai">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="dizhi" Mode="In" Type="String" />
+            <Parameter Name="liyou" Mode="In" Type="String" />
+            <Parameter Name="time1" Mode="In" Type="DateTime" />
+            <Parameter Name="time2" Mode="In" Type="DateTime" />
+            <Parameter Name="jieguo" Mode="In" Type="String" />
+            <Parameter Name="zhichi" Mode="In" Type="String" />
+            <Parameter Name="shenghe" Mode="In" Type="String" />
+            <Parameter Name="shenghe2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_add_qj">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="leixngid" Mode="In" Type="Int32" />
+            <Parameter Name="time1" Mode="In" Type="DateTime" />
+            <Parameter Name="time2" Mode="In" Type="DateTime" />
+            <Parameter Name="qjsy" Mode="In" Type="String" />
+            <Parameter Name="qjtype" Mode="In" Type="String" />
+            <Parameter Name="shenghe" Mode="In" Type="String" />
+            <Parameter Name="shenghe2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_add_tiaoxiu">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="time1" Mode="In" Type="DateTime" />
+            <Parameter Name="time2" Mode="In" Type="DateTime" />
+            <Parameter Name="anpai" Mode="In" Type="String" />
+            <Parameter Name="shenghe" Mode="In" Type="String" />
+            <Parameter Name="shenghe2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_add_waiqin">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="time1" Mode="In" Type="DateTime" />
+            <Parameter Name="time2" Mode="In" Type="DateTime" />
+            <Parameter Name="dizhi" Mode="In" Type="String" />
+            <Parameter Name="liyou" Mode="In" Type="String" />
+            <Parameter Name="shenghe" Mode="In" Type="String" />
+            <Parameter Name="shenghe2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_select_qj">
+          <Parameter Name="name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_update_mima">
+            <Parameter Name="uname" Mode="In" Type="String" />
+            <Parameter Name="newpwd" Mode="In" Type="String" />
+            <Parameter Name="hd1" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_update_yg">
+            <Parameter Name="gonghao" Mode="In" Type="Int32" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="roid" Mode="In" Type="Int32" />
+            <Parameter Name="sex" Mode="In" Type="String" />
+            <Parameter Name="bumenid" Mode="In" Type="Int32" />
+            <Parameter Name="age" Mode="In" Type="Int32" />
+            <Parameter Name="xueli" Mode="In" Type="String" />
+            <Parameter Name="pwd" Mode="In" Type="String" />
+            <Parameter Name="idshenf" Mode="In" Type="String" />
+            <Parameter Name="gongzi" Mode="In" Type="Decimal" />
+            <Parameter Name="mibaowenti" Mode="In" Type="String" />
+            <Parameter Name="mibaopwd" Mode="In" Type="String" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="qiandao" EntityType="HrmDBModel2.qiandao" />
+        </EntityContainer>
+        <EntityType Name="Apply_jiludan">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+          </Key>
+          <Property Name="ApplyID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="AttendanceID" Type="Int32" Nullable="false" />
+          <Property Name="Applykaishi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applyjieshu" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applyyuanyin" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ApplyType" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="BumenShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="XiaoquShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Apply_Type" Relationship="HrmDBModel2.FK__Apply_jil__Atten__2B3F6F97" FromRole="Apply_jiludan" ToRole="Apply_Type" />
+          <NavigationProperty Name="User_YG" Relationship="HrmDBModel2.FK__Apply_jil__UserI__2A4B4B5E" FromRole="Apply_jiludan" ToRole="User_YG" />
+        </EntityType>
+        <EntityType Name="Apply_Type">
+          <Key>
+            <PropertyRef Name="AttendanceID" />
+          </Key>
+          <Property Name="AttendanceID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="AttendanceName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Apply_jiludan" Relationship="HrmDBModel2.FK__Apply_jil__Atten__2B3F6F97" FromRole="Apply_Type" ToRole="Apply_jiludan" />
+        </EntityType>
+        <EntityType Name="Chuchai">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+          </Key>
+          <Property Name="ApplyID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Applydizhi" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ApplyLiyou" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Applykaishi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applyjieshu" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ApplyJieguo" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ApplyZhichi" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="BumenShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="XiaoquShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="User_YG" Relationship="HrmDBModel2.FK__Chuchai__UserID__251C81ED" FromRole="Chuchai" ToRole="User_YG" />
+        </EntityType>
+        <EntityType Name="Dept_bumen">
+          <Key>
+            <PropertyRef Name="DeptID" />
+          </Key>
+          <Property Name="DeptID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DeptName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="User_YG" Relationship="HrmDBModel2.FK__User_YG__DeptID__239E4DCF" FromRole="Dept_bumen" ToRole="User_YG" />
+        </EntityType>
+        <EntityType Name="Module_quanxian">
+          <Key>
+            <PropertyRef Name="ModuleID" />
+          </Key>
+          <Property Name="ModuleID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ModuleName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TypeID" Type="Int32" />
+          <NavigationProperty Name="Module_quanxian1" Relationship="HrmDBModel2.FK__Module_qu__TypeI__108B795B" FromRole="Module_quanxian" ToRole="Module_quanxian1" />
+          <NavigationProperty Name="Module_quanxian2" Relationship="HrmDBModel2.FK__Module_qu__TypeI__108B795B" FromRole="Module_quanxian1" ToRole="Module_quanxian" />
+          <NavigationProperty Name="Role_juese" Relationship="HrmDBModel2.FK__Role_jues__Modul__1DE57479" FromRole="Module_quanxian" ToRole="Role_juese" />
+        </EntityType>
+        <EntityType Name="Role_juese">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ModuleID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Module_quanxian" Relationship="HrmDBModel2.FK__Role_jues__Modul__1DE57479" FromRole="Role_juese" ToRole="Module_quanxian" />
+          <NavigationProperty Name="User_YG" Relationship="HrmDBModel2.FK__User_YG__RoleID__22AA2996" FromRole="Role_juese" ToRole="User_YG" />
+        </EntityType>
+        <EntityType Name="Tiaoxiu">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+          </Key>
+          <Property Name="ApplyID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Applykaishi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applyjieshu" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applyanpai" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="BumenShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="XiaoquShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="User_YG" Relationship="HrmDBModel2.FK__Tiaoxiu__UserID__1B9317B3" FromRole="Tiaoxiu" ToRole="User_YG" />
+        </EntityType>
+        <EntityType Name="User_YG">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="GhaoID" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="DeptID" Type="Int32" Nullable="false" />
+          <Property Name="UserPwd" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="IDCar" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Sex" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Starttime" Type="DateTime" Precision="0" />
+          <Property Name="Education" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Salary" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="mibaowenti" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="mimapwd" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Apply_jiludan" Relationship="HrmDBModel2.FK__Apply_jil__UserI__2A4B4B5E" FromRole="User_YG" ToRole="Apply_jiludan" />
+          <NavigationProperty Name="Chuchai" Relationship="HrmDBModel2.FK__Chuchai__UserID__251C81ED" FromRole="User_YG" ToRole="Chuchai" />
+          <NavigationProperty Name="Dept_bumen" Relationship="HrmDBModel2.FK__User_YG__DeptID__239E4DCF" FromRole="User_YG" ToRole="Dept_bumen" />
+          <NavigationProperty Name="Role_juese" Relationship="HrmDBModel2.FK__User_YG__RoleID__22AA2996" FromRole="User_YG" ToRole="Role_juese" />
+          <NavigationProperty Name="Tiaoxiu" Relationship="HrmDBModel2.FK__Tiaoxiu__UserID__1B9317B3" FromRole="User_YG" ToRole="Tiaoxiu" />
+          <NavigationProperty Name="Waiqing" Relationship="HrmDBModel2.FK__Waiqing__UserID__2057CCD0" FromRole="User_YG" ToRole="Waiqing" />
+        </EntityType>
+        <EntityType Name="Waiqing">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+          </Key>
+          <Property Name="ApplyID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Applykaishi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applyjieshu" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applydizhi" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ApplyLiyou" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="BumenShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="XiaoquShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="User_YG" Relationship="HrmDBModel2.FK__Waiqing__UserID__2057CCD0" FromRole="Waiqing" ToRole="User_YG" />
+        </EntityType>
+        <EntityType Name="View_Chuchai">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="Applydizhi" />
+            <PropertyRef Name="ApplyLiyou" />
+            <PropertyRef Name="Applykaishi" />
+            <PropertyRef Name="Applyjieshu" />
+            <PropertyRef Name="ApplyJieguo" />
+            <PropertyRef Name="ApplyZhichi" />
+            <PropertyRef Name="DeptName" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="ApplyID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Applydizhi" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ApplyLiyou" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Applykaishi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applyjieshu" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ApplyJieguo" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ApplyZhichi" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="BumenShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="XiaoquShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="DeptName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="View_QJlist">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="DeptName" />
+            <PropertyRef Name="ApplyID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="AttendanceID" />
+            <PropertyRef Name="Applykaishi" />
+            <PropertyRef Name="Applyjieshu" />
+            <PropertyRef Name="Applyyuanyin" />
+            <PropertyRef Name="ApplyType" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="DeptName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ApplyID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="AttendanceID" Type="Int32" Nullable="false" />
+          <Property Name="Applykaishi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applyjieshu" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applyyuanyin" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ApplyType" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="BumenShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="XiaoquShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="View_Tiaoxiu">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="Applykaishi" />
+            <PropertyRef Name="Applyjieshu" />
+            <PropertyRef Name="Applyanpai" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="DeptName" />
+          </Key>
+          <Property Name="ApplyID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Applykaishi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applyjieshu" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applyanpai" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="BumenShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="XiaoquShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="DeptName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="View_Waiqin">
+          <Key>
+            <PropertyRef Name="ApplyID" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="Applykaishi" />
+            <PropertyRef Name="Applyjieshu" />
+            <PropertyRef Name="Applydizhi" />
+            <PropertyRef Name="ApplyLiyou" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="DeptName" />
+          </Key>
+          <Property Name="ApplyID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Applykaishi" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applyjieshu" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Applydizhi" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ApplyLiyou" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="BumenShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="XiaoquShenHe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="DeptName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="View_YG">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="GhaoID" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="RoleID" />
+            <PropertyRef Name="DeptID" />
+            <PropertyRef Name="UserPwd" />
+            <PropertyRef Name="IDCar" />
+            <PropertyRef Name="Sex" />
+            <PropertyRef Name="Age" />
+            <PropertyRef Name="Starttime" />
+            <PropertyRef Name="Education" />
+            <PropertyRef Name="Salary" />
+            <PropertyRef Name="mibaowenti" />
+            <PropertyRef Name="mimapwd" />
+            <PropertyRef Name="RoleName" />
+            <PropertyRef Name="DeptName" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="GhaoID" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="DeptID" Type="Int32" Nullable="false" />
+          <Property Name="UserPwd" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="IDCar" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Sex" Type="String" Nullable="false" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Starttime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Education" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Salary" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="mibaowenti" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="mimapwd" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DeptName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK__Apply_jil__Atten__2B3F6F97">
+          <End Role="Apply_Type" Type="HrmDBModel2.Apply_Type" Multiplicity="1" />
+          <End Role="Apply_jiludan" Type="HrmDBModel2.Apply_jiludan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Apply_Type">
+              <PropertyRef Name="AttendanceID" />
+            </Principal>
+            <Dependent Role="Apply_jiludan">
+              <PropertyRef Name="AttendanceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Apply_jil__UserI__2A4B4B5E">
+          <End Role="User_YG" Type="HrmDBModel2.User_YG" Multiplicity="1" />
+          <End Role="Apply_jiludan" Type="HrmDBModel2.Apply_jiludan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_YG">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Apply_jiludan">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Chuchai__UserID__251C81ED">
+          <End Role="User_YG" Type="HrmDBModel2.User_YG" Multiplicity="1" />
+          <End Role="Chuchai" Type="HrmDBModel2.Chuchai" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_YG">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Chuchai">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_YG__DeptID__239E4DCF">
+          <End Role="Dept_bumen" Type="HrmDBModel2.Dept_bumen" Multiplicity="1" />
+          <End Role="User_YG" Type="HrmDBModel2.User_YG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dept_bumen">
+              <PropertyRef Name="DeptID" />
+            </Principal>
+            <Dependent Role="User_YG">
+              <PropertyRef Name="DeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Module_qu__TypeI__108B795B">
+          <End Role="Module_quanxian" Type="HrmDBModel2.Module_quanxian" Multiplicity="0..1" />
+          <End Role="Module_quanxian1" Type="HrmDBModel2.Module_quanxian" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Module_quanxian">
+              <PropertyRef Name="ModuleID" />
+            </Principal>
+            <Dependent Role="Module_quanxian1">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Role_jues__Modul__1DE57479">
+          <End Role="Module_quanxian" Type="HrmDBModel2.Module_quanxian" Multiplicity="1" />
+          <End Role="Role_juese" Type="HrmDBModel2.Role_juese" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Module_quanxian">
+              <PropertyRef Name="ModuleID" />
+            </Principal>
+            <Dependent Role="Role_juese">
+              <PropertyRef Name="ModuleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_YG__RoleID__22AA2996">
+          <End Role="Role_juese" Type="HrmDBModel2.Role_juese" Multiplicity="1" />
+          <End Role="User_YG" Type="HrmDBModel2.User_YG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role_juese">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="User_YG">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tiaoxiu__UserID__1B9317B3">
+          <End Role="User_YG" Type="HrmDBModel2.User_YG" Multiplicity="1" />
+          <End Role="Tiaoxiu" Type="HrmDBModel2.Tiaoxiu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_YG">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Tiaoxiu">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Waiqing__UserID__2057CCD0">
+          <End Role="User_YG" Type="HrmDBModel2.User_YG" Multiplicity="1" />
+          <End Role="Waiqing" Type="HrmDBModel2.Waiqing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_YG">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Waiqing">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="qiandao">
+          <Key>
+            <PropertyRef Name="QDid" />
+          </Key>
+          <Property Type="Int32" Name="QDid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="QDtitle" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QDZ" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="QDtime" Precision="3" />
+          <Property Type="Boolean" Name="QDstate" />
+          <Property Type="String" Name="FQQDZ" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HrmDBModel2StoreContainer" CdmEntityContainer="HrmDBEntities3">
+          <EntitySetMapping Name="Apply_jiludan">
+            <EntityTypeMapping TypeName="HrmDBModel2.Apply_jiludan">
+              <MappingFragment StoreEntitySet="Apply_jiludan">
+                <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+                <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+                <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+                <ScalarProperty Name="Applyyuanyin" ColumnName="Applyyuanyin" />
+                <ScalarProperty Name="ApplyType" ColumnName="ApplyType" />
+                <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+                <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Apply_Type">
+            <EntityTypeMapping TypeName="HrmDBModel2.Apply_Type">
+              <MappingFragment StoreEntitySet="Apply_Type">
+                <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+                <ScalarProperty Name="AttendanceName" ColumnName="AttendanceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Chuchai">
+            <EntityTypeMapping TypeName="HrmDBModel2.Chuchai">
+              <MappingFragment StoreEntitySet="Chuchai">
+                <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Applydizhi" ColumnName="Applydizhi" />
+                <ScalarProperty Name="ApplyLiyou" ColumnName="ApplyLiyou" />
+                <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+                <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+                <ScalarProperty Name="ApplyJieguo" ColumnName="ApplyJieguo" />
+                <ScalarProperty Name="ApplyZhichi" ColumnName="ApplyZhichi" />
+                <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+                <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dept_bumen">
+            <EntityTypeMapping TypeName="HrmDBModel2.Dept_bumen">
+              <MappingFragment StoreEntitySet="Dept_bumen">
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Module_quanxian">
+            <EntityTypeMapping TypeName="HrmDBModel2.Module_quanxian">
+              <MappingFragment StoreEntitySet="Module_quanxian">
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role_juese">
+            <EntityTypeMapping TypeName="HrmDBModel2.Role_juese">
+              <MappingFragment StoreEntitySet="Role_juese">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tiaoxiu">
+            <EntityTypeMapping TypeName="HrmDBModel2.Tiaoxiu">
+              <MappingFragment StoreEntitySet="Tiaoxiu">
+                <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+                <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+                <ScalarProperty Name="Applyanpai" ColumnName="Applyanpai" />
+                <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+                <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_YG">
+            <EntityTypeMapping TypeName="HrmDBModel2.User_YG">
+              <MappingFragment StoreEntitySet="User_YG">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="GhaoID" ColumnName="GhaoID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+                <ScalarProperty Name="IDCar" ColumnName="IDCar" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Starttime" ColumnName="Starttime" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="mibaowenti" ColumnName="mibaowenti" />
+                <ScalarProperty Name="mimapwd" ColumnName="mimapwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Waiqing">
+            <EntityTypeMapping TypeName="HrmDBModel2.Waiqing">
+              <MappingFragment StoreEntitySet="Waiqing">
+                <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+                <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+                <ScalarProperty Name="Applydizhi" ColumnName="Applydizhi" />
+                <ScalarProperty Name="ApplyLiyou" ColumnName="ApplyLiyou" />
+                <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+                <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Chuchai">
+            <EntityTypeMapping TypeName="HrmDBModel2.View_Chuchai">
+              <MappingFragment StoreEntitySet="View_Chuchai">
+                <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Applydizhi" ColumnName="Applydizhi" />
+                <ScalarProperty Name="ApplyLiyou" ColumnName="ApplyLiyou" />
+                <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+                <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+                <ScalarProperty Name="ApplyJieguo" ColumnName="ApplyJieguo" />
+                <ScalarProperty Name="ApplyZhichi" ColumnName="ApplyZhichi" />
+                <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+                <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_QJlist">
+            <EntityTypeMapping TypeName="HrmDBModel2.View_QJlist">
+              <MappingFragment StoreEntitySet="View_QJlist">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+                <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+                <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+                <ScalarProperty Name="Applyyuanyin" ColumnName="Applyyuanyin" />
+                <ScalarProperty Name="ApplyType" ColumnName="ApplyType" />
+                <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+                <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Tiaoxiu">
+            <EntityTypeMapping TypeName="HrmDBModel2.View_Tiaoxiu">
+              <MappingFragment StoreEntitySet="View_Tiaoxiu">
+                <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+                <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+                <ScalarProperty Name="Applyanpai" ColumnName="Applyanpai" />
+                <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+                <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Waiqin">
+            <EntityTypeMapping TypeName="HrmDBModel2.View_Waiqin">
+              <MappingFragment StoreEntitySet="View_Waiqin">
+                <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Applykaishi" ColumnName="Applykaishi" />
+                <ScalarProperty Name="Applyjieshu" ColumnName="Applyjieshu" />
+                <ScalarProperty Name="Applydizhi" ColumnName="Applydizhi" />
+                <ScalarProperty Name="ApplyLiyou" ColumnName="ApplyLiyou" />
+                <ScalarProperty Name="BumenShenHe" ColumnName="BumenShenHe" />
+                <ScalarProperty Name="XiaoquShenHe" ColumnName="XiaoquShenHe" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_YG">
+            <EntityTypeMapping TypeName="HrmDBModel2.View_YG">
+              <MappingFragment StoreEntitySet="View_YG">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="GhaoID" ColumnName="GhaoID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+                <ScalarProperty Name="IDCar" ColumnName="IDCar" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Starttime" ColumnName="Starttime" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="mibaowenti" ColumnName="mibaowenti" />
+                <ScalarProperty Name="mimapwd" ColumnName="mimapwd" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="proc_add_chuchai" FunctionName="HrmDBModel2.Store.proc_add_chuchai" />
+          <FunctionImportMapping FunctionImportName="proc_add_qj" FunctionName="HrmDBModel2.Store.proc_add_qj" />
+          <FunctionImportMapping FunctionImportName="proc_add_tiaoxiu" FunctionName="HrmDBModel2.Store.proc_add_tiaoxiu" />
+          <FunctionImportMapping FunctionImportName="proc_add_waiqin" FunctionName="HrmDBModel2.Store.proc_add_waiqin" />
+          <FunctionImportMapping FunctionImportName="proc_select_qj" FunctionName="HrmDBModel2.Store.proc_select_qj" />
+          <FunctionImportMapping FunctionImportName="proc_update_mima" FunctionName="HrmDBModel2.Store.proc_update_mima" />
+          <FunctionImportMapping FunctionImportName="proc_update_yg" FunctionName="HrmDBModel2.Store.proc_update_yg" />
+          <EntitySetMapping Name="qiandao">
+            <EntityTypeMapping TypeName="HrmDBModel2.qiandao">
+              <MappingFragment StoreEntitySet="qiandao">
+                <ScalarProperty Name="FQQDZ" ColumnName="FQQDZ" />
+                <ScalarProperty Name="QDstate" ColumnName="QDstate" />
+                <ScalarProperty Name="QDtime" ColumnName="QDtime" />
+                <ScalarProperty Name="QDZ" ColumnName="QDZ" />
+                <ScalarProperty Name="QDtitle" ColumnName="QDtitle" />
+                <ScalarProperty Name="QDid" ColumnName="QDid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

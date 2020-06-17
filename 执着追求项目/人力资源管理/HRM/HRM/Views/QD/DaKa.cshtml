@@ -1,0 +1,116 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DaKa</title>
+    <link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/UI/themes/icon.css" rel="stylesheet" />
+    <script src="~/UI/jquery-1.11.2.min.js"></script>
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+    <style type="text/css">
+        #bigdiv {
+            background-image: url('../Imges/320433.jpg');
+            /*background-image: 200px;*/
+            width:100%;
+            height:100%;
+        }
+    </style>
+       
+</head>
+<body>
+    <div id="bigdiv">
+     <div id="win2">
+        @using (Html.BeginForm("chenggongqiandao", "QD", FormMethod.Post))
+       {
+      
+       <input type="hidden" id="QDid2" name="QDid" />
+       @*<input type="hidden" id="QDZ2" name="QDZ" />*@
+       <input type="hidden" id="QDtime2" name="QDtime" />
+       <input type="hidden" id="FQQDZ2" name="FQQDZ"/>
+       <input type="hidden" id="QDstate2" name="QDstate"/>
+       <input type="hidden" id="QDtitle2" name="QDtitle" />
+       <input type="hidden" id="QDZ2" name="QDZ"  value=" @ViewBag.name"/>
+      <p style="text-align:center"> <input type="submit" id="Jieshu"value="确定"/>
+       <input  type="button" id="quxiaowin2" value="取消"/>  </p>  
+       }  
+    </div>
+    <div>
+       
+          <div id="qdlist"></div>
+    </div>
+        </div>
+     <script>
+         $(function () {
+             $('#win2').window({
+                 title: "您确定要签到吗？",
+                 width: 220,
+                 height: 90,
+                 modal: true,
+                 closed: true,
+                 collapsible: false,
+                 minimizable: false,
+                 maximizable: false
+             });
+             $("#quxiaowin2").click(function () {
+                 $('#win2').window('close');
+             });
+             $('#qdlist').datagrid({
+                 url: '/QD/wyDaKa',
+                 columns: [[
+                       { field: 'QDid', title: '编号', width: 100, hidden: true },
+                       { field: 'QDZ', title: '签到者', width: 100, hidden: true },
+                       { field: 'QDtitle', title: '签到标题', width: 150 },
+                       { field: 'shijian', title: '签到时间', width: 150 },
+                       { field: 'FQQDZ', title: '发起签到人', width: 100 },
+                      {
+                          field: 'QDstate', title: '签到状态', width: 300, align: 'right', formatter: function (value, row, index) {
+                              if (row.user) {
+                                  return row.user.name;
+                              } else {
+                                  if (value == true) {
+                                      return "<a  href='#' onclick='daka();return false' >签到</a>";
+
+
+                                  }
+                                  else {
+                                      return "签到已结束";
+                                  }
+
+
+                              }
+                          }
+                      }
+                 ]]
+             });
+         });
+    </script>
+    <script>
+        function daka() {
+
+            var rows = $("#qdlist").datagrid("getSelected");
+            var name = $("#QDZ2").val();
+            $("#QDstate2").val(rows.QDstate);
+            $("#QDid2").val(rows.QDid);
+            $("#QDtime2").val(rows.shijian);
+            $("#QDtitle2").val(rows.QDtitle);
+
+            $("#FQQDZ2").val(rows.FQQDZ);
+
+            if (rows.QDZ!=null) {
+               $("#QDZ2").val(rows.QDZ+","+name);
+            }
+            else {
+                $("#QDZ2").val( name);
+            }
+
+            $('#win2').window('open');
+        }
+    </script>
+</body>
+</html>

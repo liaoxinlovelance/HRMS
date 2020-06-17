@@ -1,0 +1,1025 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DCC92A84-2543-44AC-96E1-B748C02C44BE}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HRM</RootNamespace>
+    <AssemblyName>HRM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\jQueryEasyUI\练习考前\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\..\..\..\..\jQueryEasyUI\练习考前\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\..\..\..\..\jQueryEasyUI\练习考前\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\jQueryEasyUI\练习考前\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\..\..\..\..\jQueryEasyUI\练习考前\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BuMenController.cs" />
+    <Compile Include="Controllers\ChuchaiController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KHguanliController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\QDController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
+    <Compile Include="Controllers\TiaoxiuController.cs" />
+    <Compile Include="Controllers\WaiqinController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Apply_jiludan.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Apply_Type.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Chuchai.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dept_bumen.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Module_quanxian.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\qiandao.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role_juese.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tiaoxiu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User_YG.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_Chuchai.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_QJlist.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_Tiaoxiu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_Waiqin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_YG.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Waiqing.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="CSS\Denglu.css" />
+    <Content Include="CSS\titletime.css" />
+    <Content Include="echarts-2.2.7\bar.js" />
+    <Content Include="echarts-2.2.7\chord.js" />
+    <Content Include="echarts-2.2.7\echarts-all.js" />
+    <Content Include="echarts-2.2.7\eventRiver.js" />
+    <Content Include="echarts-2.2.7\force.js" />
+    <Content Include="echarts-2.2.7\funnel.js" />
+    <Content Include="echarts-2.2.7\gauge.js" />
+    <Content Include="echarts-2.2.7\heatmap.js" />
+    <Content Include="echarts-2.2.7\k.js" />
+    <Content Include="echarts-2.2.7\line.js" />
+    <Content Include="echarts-2.2.7\map.js" />
+    <Content Include="echarts-2.2.7\pie.js" />
+    <Content Include="echarts-2.2.7\radar.js" />
+    <Content Include="echarts-2.2.7\scatter.js" />
+    <Content Include="echarts-2.2.7\tree.js" />
+    <Content Include="echarts-2.2.7\treemap.js" />
+    <Content Include="echarts-2.2.7\venn.js" />
+    <Content Include="echarts-2.2.7\wordCloud.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Imges\1000042.jpg" />
+    <Content Include="Imges\1000056.jpg" />
+    <Content Include="Imges\320433.jpg" />
+    <Content Include="Imges\5975a969a4385.png" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Imges\LOGO.png" />
+    <Content Include="Imges\桌面-4.jpg" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Script\echarts.common.min.js" />
+    <Content Include="Script\JavaScript1.js" />
+    <Content Include="Script\jquery-1.11.2.min.js" />
+    <Content Include="Script\jquery-1.7.1.js" />
+    <Content Include="UI\changelog.txt" />
+    <Content Include="UI\demo\accordion\actions.html" />
+    <Content Include="UI\demo\accordion\ajax.html" />
+    <Content Include="UI\demo\accordion\basic.html" />
+    <Content Include="UI\demo\accordion\expandable.html" />
+    <Content Include="UI\demo\accordion\fluid.html" />
+    <Content Include="UI\demo\accordion\multiple.html" />
+    <Content Include="UI\demo\accordion\tools.html" />
+    <Content Include="UI\demo\accordion\_content.html" />
+    <Content Include="UI\demo\calendar\basic.html" />
+    <Content Include="UI\demo\calendar\custom.html" />
+    <Content Include="UI\demo\calendar\disabledate.html" />
+    <Content Include="UI\demo\calendar\firstday.html" />
+    <Content Include="UI\demo\calendar\fluid.html" />
+    <Content Include="UI\demo\combobox\actions.html" />
+    <Content Include="UI\demo\combobox\basic.html" />
+    <Content Include="UI\demo\combobox\customformat.html" />
+    <Content Include="UI\demo\combobox\dynamicdata.html" />
+    <Content Include="UI\demo\combobox\fluid.html" />
+    <Content Include="UI\demo\combobox\group.html" />
+    <Content Include="UI\demo\combobox\icons.html" />
+    <Content Include="UI\demo\combobox\multiline.html" />
+    <Content Include="UI\demo\combobox\multiple.html" />
+    <Content Include="UI\demo\combobox\navigation.html" />
+    <Content Include="UI\demo\combobox\remotedata.html" />
+    <Content Include="UI\demo\combobox\remotejsonp.html" />
+    <Content Include="UI\demo\combogrid\actions.html" />
+    <Content Include="UI\demo\combogrid\basic.html" />
+    <Content Include="UI\demo\combogrid\fluid.html" />
+    <Content Include="UI\demo\combogrid\initvalue.html" />
+    <Content Include="UI\demo\combogrid\multiple.html" />
+    <Content Include="UI\demo\combogrid\navigation.html" />
+    <Content Include="UI\demo\combotree\actions.html" />
+    <Content Include="UI\demo\combotree\basic.html" />
+    <Content Include="UI\demo\combotree\fluid.html" />
+    <Content Include="UI\demo\combotree\initvalue.html" />
+    <Content Include="UI\demo\combotree\multiple.html" />
+    <Content Include="UI\demo\combo\basic.html" />
+    <Content Include="UI\demo\datagrid\aligncolumns.html" />
+    <Content Include="UI\demo\datagrid\basic.html" />
+    <Content Include="UI\demo\datagrid\cacheeditor.html" />
+    <Content Include="UI\demo\datagrid\cellediting.html" />
+    <Content Include="UI\demo\datagrid\cellstyle.html" />
+    <Content Include="UI\demo\datagrid\checkbox.html" />
+    <Content Include="UI\demo\datagrid\clientpagination.html" />
+    <Content Include="UI\demo\datagrid\columngroup.html" />
+    <Content Include="UI\demo\datagrid\complextoolbar.html" />
+    <Content Include="UI\demo\datagrid\contextmenu.html" />
+    <Content Include="UI\demo\datagrid\custompager.html" />
+    <Content Include="UI\demo\datagrid\fluid.html" />
+    <Content Include="UI\demo\datagrid\footer.html" />
+    <Content Include="UI\demo\datagrid\formatcolumns.html" />
+    <Content Include="UI\demo\datagrid\frozencolumns.html" />
+    <Content Include="UI\demo\datagrid\frozenrows.html" />
+    <Content Include="UI\demo\datagrid\mergecells.html" />
+    <Content Include="UI\demo\datagrid\multisorting.html" />
+    <Content Include="UI\demo\datagrid\rowborder.html" />
+    <Content Include="UI\demo\datagrid\rowediting.html" />
+    <Content Include="UI\demo\datagrid\rowstyle.html" />
+    <Content Include="UI\demo\datagrid\selection.html" />
+    <Content Include="UI\demo\datagrid\simpletoolbar.html" />
+    <Content Include="UI\demo\datagrid\transform.html" />
+    <Content Include="UI\demo\datebox\basic.html" />
+    <Content Include="UI\demo\datebox\buttons.html" />
+    <Content Include="UI\demo\datebox\dateformat.html" />
+    <Content Include="UI\demo\datebox\events.html" />
+    <Content Include="UI\demo\datebox\fluid.html" />
+    <Content Include="UI\demo\datebox\restrict.html" />
+    <Content Include="UI\demo\datebox\sharedcalendar.html" />
+    <Content Include="UI\demo\datebox\validate.html" />
+    <Content Include="UI\demo\datetimebox\basic.html" />
+    <Content Include="UI\demo\datetimebox\fluid.html" />
+    <Content Include="UI\demo\datetimebox\initvalue.html" />
+    <Content Include="UI\demo\datetimebox\showseconds.html" />
+    <Content Include="UI\demo\datetimespinner\basic.html" />
+    <Content Include="UI\demo\datetimespinner\clearicon.html" />
+    <Content Include="UI\demo\datetimespinner\fluid.html" />
+    <Content Include="UI\demo\datetimespinner\format.html" />
+    <Content Include="UI\demo\demo.css" />
+    <Content Include="UI\demo\dialog\basic.html" />
+    <Content Include="UI\demo\dialog\complextoolbar.html" />
+    <Content Include="UI\demo\dialog\fluid.html" />
+    <Content Include="UI\demo\dialog\toolbarbuttons.html" />
+    <Content Include="UI\demo\draggable\basic.html" />
+    <Content Include="UI\demo\draggable\constain.html" />
+    <Content Include="UI\demo\draggable\snap.html" />
+    <Content Include="UI\demo\droppable\accept.html" />
+    <Content Include="UI\demo\droppable\basic.html" />
+    <Content Include="UI\demo\droppable\sort.html" />
+    <Content Include="UI\demo\easyloader\basic.html" />
+    <Content Include="UI\demo\filebox\basic.html" />
+    <Content Include="UI\demo\filebox\buttonalign.html" />
+    <Content Include="UI\demo\filebox\fluid.html" />
+    <Content Include="UI\demo\form\basic.html" />
+    <Content Include="UI\demo\form\load.html" />
+    <Content Include="UI\demo\form\validateonsubmit.html" />
+    <Content Include="UI\demo\layout\addremove.html" />
+    <Content Include="UI\demo\layout\autoheight.html" />
+    <Content Include="UI\demo\layout\basic.html" />
+    <Content Include="UI\demo\layout\complex.html" />
+    <Content Include="UI\demo\layout\fluid.html" />
+    <Content Include="UI\demo\layout\full.html" />
+    <Content Include="UI\demo\layout\nestedlayout.html" />
+    <Content Include="UI\demo\layout\nocollapsible.html" />
+    <Content Include="UI\demo\layout\_content.html" />
+    <Content Include="UI\demo\linkbutton\basic.html" />
+    <Content Include="UI\demo\linkbutton\fluid.html" />
+    <Content Include="UI\demo\linkbutton\group.html" />
+    <Content Include="UI\demo\linkbutton\iconalign.html" />
+    <Content Include="UI\demo\linkbutton\plain.html" />
+    <Content Include="UI\demo\linkbutton\size.html" />
+    <Content Include="UI\demo\linkbutton\style.html" />
+    <Content Include="UI\demo\linkbutton\toggle.html" />
+    <Content Include="UI\demo\menubutton\actions.html" />
+    <Content Include="UI\demo\menubutton\alignment.html" />
+    <Content Include="UI\demo\menubutton\basic.html" />
+    <Content Include="UI\demo\menu\basic.html" />
+    <Content Include="UI\demo\menu\customitem.html" />
+    <Content Include="UI\demo\menu\events.html" />
+    <Content Include="UI\demo\messager\alert.html" />
+    <Content Include="UI\demo\messager\basic.html" />
+    <Content Include="UI\demo\messager\interactive.html" />
+    <Content Include="UI\demo\messager\position.html" />
+    <Content Include="UI\demo\numberbox\basic.html" />
+    <Content Include="UI\demo\numberbox\fluid.html" />
+    <Content Include="UI\demo\numberbox\format.html" />
+    <Content Include="UI\demo\numberbox\range.html" />
+    <Content Include="UI\demo\numberspinner\basic.html" />
+    <Content Include="UI\demo\numberspinner\fluid.html" />
+    <Content Include="UI\demo\numberspinner\increment.html" />
+    <Content Include="UI\demo\numberspinner\range.html" />
+    <Content Include="UI\demo\pagination\attaching.html" />
+    <Content Include="UI\demo\pagination\basic.html" />
+    <Content Include="UI\demo\pagination\custombuttons.html" />
+    <Content Include="UI\demo\pagination\layout.html" />
+    <Content Include="UI\demo\pagination\links.html" />
+    <Content Include="UI\demo\pagination\simple.html" />
+    <Content Include="UI\demo\panel\basic.html" />
+    <Content Include="UI\demo\panel\customtools.html" />
+    <Content Include="UI\demo\panel\fluid.html" />
+    <Content Include="UI\demo\panel\loadcontent.html" />
+    <Content Include="UI\demo\panel\nestedpanel.html" />
+    <Content Include="UI\demo\panel\paneltools.html" />
+    <Content Include="UI\demo\panel\_content.html" />
+    <Content Include="UI\demo\progressbar\basic.html" />
+    <Content Include="UI\demo\progressbar\fluid.html" />
+    <Content Include="UI\demo\propertygrid\basic.html" />
+    <Content Include="UI\demo\propertygrid\customcolumns.html" />
+    <Content Include="UI\demo\propertygrid\groupformat.html" />
+    <Content Include="UI\demo\resizable\basic.html" />
+    <Content Include="UI\demo\searchbox\basic.html" />
+    <Content Include="UI\demo\searchbox\category.html" />
+    <Content Include="UI\demo\searchbox\fluid.html" />
+    <Content Include="UI\demo\slider\basic.html" />
+    <Content Include="UI\demo\slider\fluid.html" />
+    <Content Include="UI\demo\slider\formattip.html" />
+    <Content Include="UI\demo\slider\nonlinear.html" />
+    <Content Include="UI\demo\slider\rule.html" />
+    <Content Include="UI\demo\slider\vertical.html" />
+    <Content Include="UI\demo\splitbutton\actions.html" />
+    <Content Include="UI\demo\splitbutton\basic.html" />
+    <Content Include="UI\demo\tabs\autoheight.html" />
+    <Content Include="UI\demo\tabs\basic.html" />
+    <Content Include="UI\demo\tabs\dropdown.html" />
+    <Content Include="UI\demo\tabs\fixedwidth.html" />
+    <Content Include="UI\demo\tabs\fluid.html" />
+    <Content Include="UI\demo\tabs\hover.html" />
+    <Content Include="UI\demo\tabs\images\modem.png" />
+    <Content Include="UI\demo\tabs\images\pda.png" />
+    <Content Include="UI\demo\tabs\images\scanner.png" />
+    <Content Include="UI\demo\tabs\images\tablet.png" />
+    <Content Include="UI\demo\tabs\nestedtabs.html" />
+    <Content Include="UI\demo\tabs\striptools.html" />
+    <Content Include="UI\demo\tabs\tabimage.html" />
+    <Content Include="UI\demo\tabs\tabposition.html" />
+    <Content Include="UI\demo\tabs\tabstools.html" />
+    <Content Include="UI\demo\tabs\_content.html" />
+    <Content Include="UI\demo\textbox\basic.html" />
+    <Content Include="UI\demo\textbox\button.html" />
+    <Content Include="UI\demo\textbox\clearicon.html" />
+    <Content Include="UI\demo\textbox\custom.html" />
+    <Content Include="UI\demo\textbox\fluid.html" />
+    <Content Include="UI\demo\textbox\icons.html" />
+    <Content Include="UI\demo\textbox\multiline.html" />
+    <Content Include="UI\demo\textbox\size.html" />
+    <Content Include="UI\demo\timespinner\actions.html" />
+    <Content Include="UI\demo\timespinner\basic.html" />
+    <Content Include="UI\demo\timespinner\fluid.html" />
+    <Content Include="UI\demo\timespinner\range.html" />
+    <Content Include="UI\demo\tooltip\ajax.html" />
+    <Content Include="UI\demo\tooltip\basic.html" />
+    <Content Include="UI\demo\tooltip\customcontent.html" />
+    <Content Include="UI\demo\tooltip\customstyle.html" />
+    <Content Include="UI\demo\tooltip\position.html" />
+    <Content Include="UI\demo\tooltip\toolbar.html" />
+    <Content Include="UI\demo\tooltip\tooltipdialog.html" />
+    <Content Include="UI\demo\tooltip\_content.html" />
+    <Content Include="UI\demo\tooltip\_dialog.html" />
+    <Content Include="UI\demo\treegrid\actions.html" />
+    <Content Include="UI\demo\treegrid\basic.html" />
+    <Content Include="UI\demo\treegrid\clientpagination.html" />
+    <Content Include="UI\demo\treegrid\contextmenu.html" />
+    <Content Include="UI\demo\treegrid\editable.html" />
+    <Content Include="UI\demo\treegrid\fluid.html" />
+    <Content Include="UI\demo\treegrid\footer.html" />
+    <Content Include="UI\demo\treegrid\lines.html" />
+    <Content Include="UI\demo\treegrid\reports.html" />
+    <Content Include="UI\demo\tree\actions.html" />
+    <Content Include="UI\demo\tree\animation.html" />
+    <Content Include="UI\demo\tree\basic.html" />
+    <Content Include="UI\demo\tree\checkbox.html" />
+    <Content Include="UI\demo\tree\contextmenu.html" />
+    <Content Include="UI\demo\tree\dnd.html" />
+    <Content Include="UI\demo\tree\editable.html" />
+    <Content Include="UI\demo\tree\formatting.html" />
+    <Content Include="UI\demo\tree\icons.html" />
+    <Content Include="UI\demo\tree\lazyload.html" />
+    <Content Include="UI\demo\tree\lines.html" />
+    <Content Include="UI\demo\validatebox\basic.html" />
+    <Content Include="UI\demo\validatebox\customtooltip.html" />
+    <Content Include="UI\demo\validatebox\validateonblur.html" />
+    <Content Include="UI\demo\window\basic.html" />
+    <Content Include="UI\demo\window\customtools.html" />
+    <Content Include="UI\demo\window\fluid.html" />
+    <Content Include="UI\demo\window\inlinewindow.html" />
+    <Content Include="UI\demo\window\modalwindow.html" />
+    <Content Include="UI\demo\window\windowlayout.html" />
+    <Content Include="UI\easyloader.js" />
+    <Content Include="UI\jquery.easyui.min.js" />
+    <Content Include="UI\jquery.min.js" />
+    <Content Include="UI\licence_gpl.txt" />
+    <Content Include="UI\locale\easyui-lang-af.js" />
+    <Content Include="UI\locale\easyui-lang-am.js" />
+    <Content Include="UI\locale\easyui-lang-ar.js" />
+    <Content Include="UI\locale\easyui-lang-bg.js" />
+    <Content Include="UI\locale\easyui-lang-ca.js" />
+    <Content Include="UI\locale\easyui-lang-cs.js" />
+    <Content Include="UI\locale\easyui-lang-cz.js" />
+    <Content Include="UI\locale\easyui-lang-da.js" />
+    <Content Include="UI\locale\easyui-lang-de.js" />
+    <Content Include="UI\locale\easyui-lang-el.js" />
+    <Content Include="UI\locale\easyui-lang-en.js" />
+    <Content Include="UI\locale\easyui-lang-es.js" />
+    <Content Include="UI\locale\easyui-lang-fr.js" />
+    <Content Include="UI\locale\easyui-lang-it.js" />
+    <Content Include="UI\locale\easyui-lang-jp.js" />
+    <Content Include="UI\locale\easyui-lang-nl.js" />
+    <Content Include="UI\locale\easyui-lang-pl.js" />
+    <Content Include="UI\locale\easyui-lang-pt_BR.js" />
+    <Content Include="UI\locale\easyui-lang-ru.js" />
+    <Content Include="UI\locale\easyui-lang-sv_SE.js" />
+    <Content Include="UI\locale\easyui-lang-tr.js" />
+    <Content Include="UI\locale\easyui-lang-zh_CN.js" />
+    <Content Include="UI\locale\easyui-lang-zh_TW.js" />
+    <Content Include="UI\plugins\jquery.accordion.js" />
+    <Content Include="UI\plugins\jquery.calendar.js" />
+    <Content Include="UI\plugins\jquery.combo.js" />
+    <Content Include="UI\plugins\jquery.combobox.js" />
+    <Content Include="UI\plugins\jquery.combogrid.js" />
+    <Content Include="UI\plugins\jquery.combotree.js" />
+    <Content Include="UI\plugins\jquery.datagrid.js" />
+    <Content Include="UI\plugins\jquery.datebox.js" />
+    <Content Include="UI\plugins\jquery.datetimebox.js" />
+    <Content Include="UI\plugins\jquery.datetimespinner.js" />
+    <Content Include="UI\plugins\jquery.dialog.js" />
+    <Content Include="UI\plugins\jquery.draggable.js" />
+    <Content Include="UI\plugins\jquery.droppable.js" />
+    <Content Include="UI\plugins\jquery.filebox.js" />
+    <Content Include="UI\plugins\jquery.form.js" />
+    <Content Include="UI\plugins\jquery.layout.js" />
+    <Content Include="UI\plugins\jquery.linkbutton.js" />
+    <Content Include="UI\plugins\jquery.menu.js" />
+    <Content Include="UI\plugins\jquery.menubutton.js" />
+    <Content Include="UI\plugins\jquery.messager.js" />
+    <Content Include="UI\plugins\jquery.numberbox.js" />
+    <Content Include="UI\plugins\jquery.numberspinner.js" />
+    <Content Include="UI\plugins\jquery.pagination.js" />
+    <Content Include="UI\plugins\jquery.panel.js" />
+    <Content Include="UI\plugins\jquery.parser.js" />
+    <Content Include="UI\plugins\jquery.progressbar.js" />
+    <Content Include="UI\plugins\jquery.propertygrid.js" />
+    <Content Include="UI\plugins\jquery.resizable.js" />
+    <Content Include="UI\plugins\jquery.searchbox.js" />
+    <Content Include="UI\plugins\jquery.slider.js" />
+    <Content Include="UI\plugins\jquery.spinner.js" />
+    <Content Include="UI\plugins\jquery.splitbutton.js" />
+    <Content Include="UI\plugins\jquery.tabs.js" />
+    <Content Include="UI\plugins\jquery.textbox.js" />
+    <Content Include="UI\plugins\jquery.timespinner.js" />
+    <Content Include="UI\plugins\jquery.tooltip.js" />
+    <Content Include="UI\plugins\jquery.tree.js" />
+    <Content Include="UI\plugins\jquery.treegrid.js" />
+    <Content Include="UI\plugins\jquery.validatebox.js" />
+    <Content Include="UI\plugins\jquery.window.js" />
+    <Content Include="UI\readme.txt" />
+    <Content Include="UI\src\easyloader.js" />
+    <Content Include="UI\src\jquery.accordion.js" />
+    <Content Include="UI\src\jquery.calendar.js" />
+    <Content Include="UI\src\jquery.combobox.js" />
+    <Content Include="UI\src\jquery.datebox.js" />
+    <Content Include="UI\src\jquery.draggable.js" />
+    <Content Include="UI\src\jquery.droppable.js" />
+    <Content Include="UI\src\jquery.form.js" />
+    <Content Include="UI\src\jquery.linkbutton.js" />
+    <Content Include="UI\src\jquery.menu.js" />
+    <Content Include="UI\src\jquery.parser.js" />
+    <Content Include="UI\src\jquery.progressbar.js" />
+    <Content Include="UI\src\jquery.propertygrid.js" />
+    <Content Include="UI\src\jquery.resizable.js" />
+    <Content Include="UI\src\jquery.slider.js" />
+    <Content Include="UI\src\jquery.tabs.js" />
+    <Content Include="UI\src\jquery.window.js" />
+    <Content Include="UI\themes\black\accordion.css" />
+    <Content Include="UI\themes\black\calendar.css" />
+    <Content Include="UI\themes\black\combo.css" />
+    <Content Include="UI\themes\black\combobox.css" />
+    <Content Include="UI\themes\black\datagrid.css" />
+    <Content Include="UI\themes\black\datebox.css" />
+    <Content Include="UI\themes\black\dialog.css" />
+    <Content Include="UI\themes\black\easyui.css" />
+    <Content Include="UI\themes\black\filebox.css" />
+    <Content Include="UI\themes\black\images\accordion_arrows.png" />
+    <Content Include="UI\themes\black\images\blank.gif" />
+    <Content Include="UI\themes\black\images\calendar_arrows.png" />
+    <Content Include="UI\themes\black\images\combo_arrow.png" />
+    <Content Include="UI\themes\black\images\datagrid_icons.png" />
+    <Content Include="UI\themes\black\images\datebox_arrow.png" />
+    <Content Include="UI\themes\black\images\layout_arrows.png" />
+    <Content Include="UI\themes\black\images\linkbutton_bg.png" />
+    <Content Include="UI\themes\black\images\loading.gif" />
+    <Content Include="UI\themes\black\images\menu_arrows.png" />
+    <Content Include="UI\themes\black\images\messager_icons.png" />
+    <Content Include="UI\themes\black\images\pagination_icons.png" />
+    <Content Include="UI\themes\black\images\panel_tools.png" />
+    <Content Include="UI\themes\black\images\searchbox_button.png" />
+    <Content Include="UI\themes\black\images\slider_handle.png" />
+    <Content Include="UI\themes\black\images\spinner_arrows.png" />
+    <Content Include="UI\themes\black\images\tabs_icons.png" />
+    <Content Include="UI\themes\black\images\tree_icons.png" />
+    <Content Include="UI\themes\black\images\validatebox_warning.png" />
+    <Content Include="UI\themes\black\layout.css" />
+    <Content Include="UI\themes\black\linkbutton.css" />
+    <Content Include="UI\themes\black\menu.css" />
+    <Content Include="UI\themes\black\menubutton.css" />
+    <Content Include="UI\themes\black\messager.css" />
+    <Content Include="UI\themes\black\numberbox.css" />
+    <Content Include="UI\themes\black\pagination.css" />
+    <Content Include="UI\themes\black\panel.css" />
+    <Content Include="UI\themes\black\progressbar.css" />
+    <Content Include="UI\themes\black\propertygrid.css" />
+    <Content Include="UI\themes\black\searchbox.css" />
+    <Content Include="UI\themes\black\slider.css" />
+    <Content Include="UI\themes\black\spinner.css" />
+    <Content Include="UI\themes\black\splitbutton.css" />
+    <Content Include="UI\themes\black\tabs.css" />
+    <Content Include="UI\themes\black\textbox.css" />
+    <Content Include="UI\themes\black\tooltip.css" />
+    <Content Include="UI\themes\black\tree.css" />
+    <Content Include="UI\themes\black\validatebox.css" />
+    <Content Include="UI\themes\black\window.css" />
+    <Content Include="UI\themes\bootstrap\accordion.css" />
+    <Content Include="UI\themes\bootstrap\calendar.css" />
+    <Content Include="UI\themes\bootstrap\combo.css" />
+    <Content Include="UI\themes\bootstrap\combobox.css" />
+    <Content Include="UI\themes\bootstrap\datagrid.css" />
+    <Content Include="UI\themes\bootstrap\datebox.css" />
+    <Content Include="UI\themes\bootstrap\dialog.css" />
+    <Content Include="UI\themes\bootstrap\easyui.css" />
+    <Content Include="UI\themes\bootstrap\filebox.css" />
+    <Content Include="UI\themes\bootstrap\images\accordion_arrows.png" />
+    <Content Include="UI\themes\bootstrap\images\blank.gif" />
+    <Content Include="UI\themes\bootstrap\images\calendar_arrows.png" />
+    <Content Include="UI\themes\bootstrap\images\combo_arrow.png" />
+    <Content Include="UI\themes\bootstrap\images\datagrid_icons.png" />
+    <Content Include="UI\themes\bootstrap\images\datebox_arrow.png" />
+    <Content Include="UI\themes\bootstrap\images\layout_arrows.png" />
+    <Content Include="UI\themes\bootstrap\images\linkbutton_bg.png" />
+    <Content Include="UI\themes\bootstrap\images\loading.gif" />
+    <Content Include="UI\themes\bootstrap\images\menu_arrows.png" />
+    <Content Include="UI\themes\bootstrap\images\messager_icons.png" />
+    <Content Include="UI\themes\bootstrap\images\pagination_icons.png" />
+    <Content Include="UI\themes\bootstrap\images\panel_tools.png" />
+    <Content Include="UI\themes\bootstrap\images\searchbox_button.png" />
+    <Content Include="UI\themes\bootstrap\images\slider_handle.png" />
+    <Content Include="UI\themes\bootstrap\images\spinner_arrows.png" />
+    <Content Include="UI\themes\bootstrap\images\tabs_icons.png" />
+    <Content Include="UI\themes\bootstrap\images\tree_icons.png" />
+    <Content Include="UI\themes\bootstrap\images\validatebox_warning.png" />
+    <Content Include="UI\themes\bootstrap\layout.css" />
+    <Content Include="UI\themes\bootstrap\linkbutton.css" />
+    <Content Include="UI\themes\bootstrap\menu.css" />
+    <Content Include="UI\themes\bootstrap\menubutton.css" />
+    <Content Include="UI\themes\bootstrap\messager.css" />
+    <Content Include="UI\themes\bootstrap\numberbox.css" />
+    <Content Include="UI\themes\bootstrap\pagination.css" />
+    <Content Include="UI\themes\bootstrap\panel.css" />
+    <Content Include="UI\themes\bootstrap\progressbar.css" />
+    <Content Include="UI\themes\bootstrap\propertygrid.css" />
+    <Content Include="UI\themes\bootstrap\searchbox.css" />
+    <Content Include="UI\themes\bootstrap\slider.css" />
+    <Content Include="UI\themes\bootstrap\spinner.css" />
+    <Content Include="UI\themes\bootstrap\splitbutton.css" />
+    <Content Include="UI\themes\bootstrap\tabs.css" />
+    <Content Include="UI\themes\bootstrap\textbox.css" />
+    <Content Include="UI\themes\bootstrap\tooltip.css" />
+    <Content Include="UI\themes\bootstrap\tree.css" />
+    <Content Include="UI\themes\bootstrap\validatebox.css" />
+    <Content Include="UI\themes\bootstrap\window.css" />
+    <Content Include="UI\themes\color.css" />
+    <Content Include="UI\themes\default\accordion.css" />
+    <Content Include="UI\themes\default\calendar.css" />
+    <Content Include="UI\themes\default\combo.css" />
+    <Content Include="UI\themes\default\combobox.css" />
+    <Content Include="UI\themes\default\datagrid.css" />
+    <Content Include="UI\themes\default\datebox.css" />
+    <Content Include="UI\themes\default\dialog.css" />
+    <Content Include="UI\themes\default\easyui.css" />
+    <Content Include="UI\themes\default\filebox.css" />
+    <Content Include="UI\themes\default\images\accordion_arrows.png" />
+    <Content Include="UI\themes\default\images\blank.gif" />
+    <Content Include="UI\themes\default\images\calendar_arrows.png" />
+    <Content Include="UI\themes\default\images\combo_arrow.png" />
+    <Content Include="UI\themes\default\images\datagrid_icons.png" />
+    <Content Include="UI\themes\default\images\datebox_arrow.png" />
+    <Content Include="UI\themes\default\images\layout_arrows.png" />
+    <Content Include="UI\themes\default\images\linkbutton_bg.png" />
+    <Content Include="UI\themes\default\images\loading.gif" />
+    <Content Include="UI\themes\default\images\menu_arrows.png" />
+    <Content Include="UI\themes\default\images\messager_icons.png" />
+    <Content Include="UI\themes\default\images\pagination_icons.png" />
+    <Content Include="UI\themes\default\images\panel_tools.png" />
+    <Content Include="UI\themes\default\images\searchbox_button.png" />
+    <Content Include="UI\themes\default\images\slider_handle.png" />
+    <Content Include="UI\themes\default\images\spinner_arrows.png" />
+    <Content Include="UI\themes\default\images\tabs_icons.png" />
+    <Content Include="UI\themes\default\images\tree_icons.png" />
+    <Content Include="UI\themes\default\images\validatebox_warning.png" />
+    <Content Include="UI\themes\default\layout.css" />
+    <Content Include="UI\themes\default\linkbutton.css" />
+    <Content Include="UI\themes\default\menu.css" />
+    <Content Include="UI\themes\default\menubutton.css" />
+    <Content Include="UI\themes\default\messager.css" />
+    <Content Include="UI\themes\default\numberbox.css" />
+    <Content Include="UI\themes\default\pagination.css" />
+    <Content Include="UI\themes\default\panel.css" />
+    <Content Include="UI\themes\default\progressbar.css" />
+    <Content Include="UI\themes\default\propertygrid.css" />
+    <Content Include="UI\themes\default\searchbox.css" />
+    <Content Include="UI\themes\default\slider.css" />
+    <Content Include="UI\themes\default\spinner.css" />
+    <Content Include="UI\themes\default\splitbutton.css" />
+    <Content Include="UI\themes\default\tabs.css" />
+    <Content Include="UI\themes\default\textbox.css" />
+    <Content Include="UI\themes\default\tooltip.css" />
+    <Content Include="UI\themes\default\tree.css" />
+    <Content Include="UI\themes\default\validatebox.css" />
+    <Content Include="UI\themes\default\window.css" />
+    <Content Include="UI\themes\gray\accordion.css" />
+    <Content Include="UI\themes\gray\calendar.css" />
+    <Content Include="UI\themes\gray\combo.css" />
+    <Content Include="UI\themes\gray\combobox.css" />
+    <Content Include="UI\themes\gray\datagrid.css" />
+    <Content Include="UI\themes\gray\datebox.css" />
+    <Content Include="UI\themes\gray\dialog.css" />
+    <Content Include="UI\themes\gray\easyui.css" />
+    <Content Include="UI\themes\gray\filebox.css" />
+    <Content Include="UI\themes\gray\images\accordion_arrows.png" />
+    <Content Include="UI\themes\gray\images\blank.gif" />
+    <Content Include="UI\themes\gray\images\calendar_arrows.png" />
+    <Content Include="UI\themes\gray\images\combo_arrow.png" />
+    <Content Include="UI\themes\gray\images\datagrid_icons.png" />
+    <Content Include="UI\themes\gray\images\datebox_arrow.png" />
+    <Content Include="UI\themes\gray\images\layout_arrows.png" />
+    <Content Include="UI\themes\gray\images\linkbutton_bg.png" />
+    <Content Include="UI\themes\gray\images\loading.gif" />
+    <Content Include="UI\themes\gray\images\menu_arrows.png" />
+    <Content Include="UI\themes\gray\images\messager_icons.png" />
+    <Content Include="UI\themes\gray\images\pagination_icons.png" />
+    <Content Include="UI\themes\gray\images\panel_tools.png" />
+    <Content Include="UI\themes\gray\images\searchbox_button.png" />
+    <Content Include="UI\themes\gray\images\slider_handle.png" />
+    <Content Include="UI\themes\gray\images\spinner_arrows.png" />
+    <Content Include="UI\themes\gray\images\tabs_icons.png" />
+    <Content Include="UI\themes\gray\images\tree_icons.png" />
+    <Content Include="UI\themes\gray\images\validatebox_warning.png" />
+    <Content Include="UI\themes\gray\layout.css" />
+    <Content Include="UI\themes\gray\linkbutton.css" />
+    <Content Include="UI\themes\gray\menu.css" />
+    <Content Include="UI\themes\gray\menubutton.css" />
+    <Content Include="UI\themes\gray\messager.css" />
+    <Content Include="UI\themes\gray\numberbox.css" />
+    <Content Include="UI\themes\gray\pagination.css" />
+    <Content Include="UI\themes\gray\panel.css" />
+    <Content Include="UI\themes\gray\progressbar.css" />
+    <Content Include="UI\themes\gray\propertygrid.css" />
+    <Content Include="UI\themes\gray\searchbox.css" />
+    <Content Include="UI\themes\gray\slider.css" />
+    <Content Include="UI\themes\gray\spinner.css" />
+    <Content Include="UI\themes\gray\splitbutton.css" />
+    <Content Include="UI\themes\gray\tabs.css" />
+    <Content Include="UI\themes\gray\textbox.css" />
+    <Content Include="UI\themes\gray\tooltip.css" />
+    <Content Include="UI\themes\gray\tree.css" />
+    <Content Include="UI\themes\gray\validatebox.css" />
+    <Content Include="UI\themes\gray\window.css" />
+    <Content Include="UI\themes\icon.css" />
+    <Content Include="UI\themes\icons\back.png" />
+    <Content Include="UI\themes\icons\blank.gif" />
+    <Content Include="UI\themes\icons\cancel.png" />
+    <Content Include="UI\themes\icons\clear.png" />
+    <Content Include="UI\themes\icons\cut.png" />
+    <Content Include="UI\themes\icons\edit_add.png" />
+    <Content Include="UI\themes\icons\edit_remove.png" />
+    <Content Include="UI\themes\icons\filesave.png" />
+    <Content Include="UI\themes\icons\filter.png" />
+    <Content Include="UI\themes\icons\help.png" />
+    <Content Include="UI\themes\icons\large_chart.png" />
+    <Content Include="UI\themes\icons\large_clipart.png" />
+    <Content Include="UI\themes\icons\large_picture.png" />
+    <Content Include="UI\themes\icons\large_shapes.png" />
+    <Content Include="UI\themes\icons\large_smartart.png" />
+    <Content Include="UI\themes\icons\lock.png" />
+    <Content Include="UI\themes\icons\man.png" />
+    <Content Include="UI\themes\icons\mini_add.png" />
+    <Content Include="UI\themes\icons\mini_edit.png" />
+    <Content Include="UI\themes\icons\mini_refresh.png" />
+    <Content Include="UI\themes\icons\no.png" />
+    <Content Include="UI\themes\icons\ok.png" />
+    <Content Include="UI\themes\icons\pencil.png" />
+    <Content Include="UI\themes\icons\print.png" />
+    <Content Include="UI\themes\icons\redo.png" />
+    <Content Include="UI\themes\icons\reload.png" />
+    <Content Include="UI\themes\icons\search.png" />
+    <Content Include="UI\themes\icons\sum.png" />
+    <Content Include="UI\themes\icons\tip.png" />
+    <Content Include="UI\themes\icons\undo.png" />
+    <Content Include="UI\themes\metro\accordion.css" />
+    <Content Include="UI\themes\metro\calendar.css" />
+    <Content Include="UI\themes\metro\combo.css" />
+    <Content Include="UI\themes\metro\combobox.css" />
+    <Content Include="UI\themes\metro\datagrid.css" />
+    <Content Include="UI\themes\metro\datebox.css" />
+    <Content Include="UI\themes\metro\dialog.css" />
+    <Content Include="UI\themes\metro\easyui.css" />
+    <Content Include="UI\themes\metro\filebox.css" />
+    <Content Include="UI\themes\metro\images\accordion_arrows.png" />
+    <Content Include="UI\themes\metro\images\blank.gif" />
+    <Content Include="UI\themes\metro\images\calendar_arrows.png" />
+    <Content Include="UI\themes\metro\images\combo_arrow.png" />
+    <Content Include="UI\themes\metro\images\datagrid_icons.png" />
+    <Content Include="UI\themes\metro\images\datebox_arrow.png" />
+    <Content Include="UI\themes\metro\images\layout_arrows.png" />
+    <Content Include="UI\themes\metro\images\linkbutton_bg.png" />
+    <Content Include="UI\themes\metro\images\loading.gif" />
+    <Content Include="UI\themes\metro\images\menu_arrows.png" />
+    <Content Include="UI\themes\metro\images\messager_icons.png" />
+    <Content Include="UI\themes\metro\images\pagination_icons.png" />
+    <Content Include="UI\themes\metro\images\panel_tools.png" />
+    <Content Include="UI\themes\metro\images\searchbox_button.png" />
+    <Content Include="UI\themes\metro\images\slider_handle.png" />
+    <Content Include="UI\themes\metro\images\spinner_arrows.png" />
+    <Content Include="UI\themes\metro\images\tabs_icons.png" />
+    <Content Include="UI\themes\metro\images\tree_icons.png" />
+    <Content Include="UI\themes\metro\images\validatebox_warning.png" />
+    <Content Include="UI\themes\metro\layout.css" />
+    <Content Include="UI\themes\metro\linkbutton.css" />
+    <Content Include="UI\themes\metro\menu.css" />
+    <Content Include="UI\themes\metro\menubutton.css" />
+    <Content Include="UI\themes\metro\messager.css" />
+    <Content Include="UI\themes\metro\numberbox.css" />
+    <Content Include="UI\themes\metro\pagination.css" />
+    <Content Include="UI\themes\metro\panel.css" />
+    <Content Include="UI\themes\metro\progressbar.css" />
+    <Content Include="UI\themes\metro\propertygrid.css" />
+    <Content Include="UI\themes\metro\searchbox.css" />
+    <Content Include="UI\themes\metro\slider.css" />
+    <Content Include="UI\themes\metro\spinner.css" />
+    <Content Include="UI\themes\metro\splitbutton.css" />
+    <Content Include="UI\themes\metro\tabs.css" />
+    <Content Include="UI\themes\metro\textbox.css" />
+    <Content Include="UI\themes\metro\tooltip.css" />
+    <Content Include="UI\themes\metro\tree.css" />
+    <Content Include="UI\themes\metro\validatebox.css" />
+    <Content Include="UI\themes\metro\window.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\demo1.cshtml" />
+    <Content Include="UI\demo\accordion\datagrid_data1.json" />
+    <Content Include="UI\demo\combobox\combobox_data1.json" />
+    <Content Include="UI\demo\combobox\combobox_data2.json" />
+    <Content Include="UI\demo\combogrid\datagrid_data1.json" />
+    <Content Include="UI\demo\combotree\tree_data1.json" />
+    <Content Include="UI\demo\datagrid\datagrid_data1.json" />
+    <Content Include="UI\demo\datagrid\datagrid_data2.json" />
+    <Content Include="UI\demo\datagrid\products.json" />
+    <Content Include="UI\demo\form\form_data1.json" />
+    <Content Include="UI\demo\layout\datagrid_data1.json" />
+    <Content Include="UI\demo\layout\propertygrid_data1.json" />
+    <Content Include="UI\demo\layout\tree_data1.json" />
+    <Content Include="UI\demo\propertygrid\propertygrid_data1.json" />
+    <Content Include="UI\demo\tabs\tree_data1.json" />
+    <Content Include="UI\demo\treegrid\treegrid_data1.json" />
+    <Content Include="UI\demo\treegrid\treegrid_data2.json" />
+    <Content Include="UI\demo\treegrid\treegrid_data3.json" />
+    <Content Include="UI\demo\tree\tree_data1.json" />
+    <Content Include="UI\demo\tree\tree_data2.json" />
+    <Content Include="UI\jquery-easyui-1.4.zip" />
+    <Content Include="Views\Main\Main.cshtml" />
+    <Content Include="Views\ZhurenKQGL\Dakakaohe.cshtml" />
+    <Content Include="Views\ZhurenKQGL\XiuJiashenqing.cshtml" />
+    <Content Include="Views\ZhuGuanKQGL\XiuJiashenqing.cshtml" />
+    <Content Include="Views\Admin\admin.cshtml" />
+    <Content Include="Views\Admin\anquan.cshtml" />
+    <Content Include="Views\Admin\yanzheng.cshtml" />
+    <Content Include="Views\Staff\appraisal.cshtml" />
+    <Content Include="Views\BuMen\XiuJia.cshtml" />
+    <Content Include="Views\KHguanli\XiuJia.cshtml" />
+    <Content Include="Views\Tiaoxiu\tiaoxiu.cshtml" />
+    <Content Include="Views\Waiqin\waiqin.cshtml" />
+    <Content Include="Views\Chuchai\chuachai.cshtml" />
+    <Content Include="Views\Admin\updateqx.cshtml" />
+    <Content Include="Views\Chuchai\Chuchaijiemian.cshtml" />
+    <Content Include="Views\Chuchai\ChuchaijiemianXQ.cshtml" />
+    <Content Include="Views\Waiqin\Waiqinjiemian.cshtml" />
+    <Content Include="Views\Waiqin\WaiqinjiemianXQ.cshtml" />
+    <Content Include="Views\Tiaoxiu\Tiaoxiujiemian.cshtml" />
+    <Content Include="Views\Tiaoxiu\TiaoxiujiemianXQ.cshtml" />
+    <Content Include="Views\QD\FQqiandao.cshtml" />
+    <Content Include="Views\QD\chayue.cshtml" />
+    <Content Include="Views\QD\DaKa.cshtml" />
+    <Content Include="Views\QD\zhuzhuangtu.cshtml" />
+    <Content Include="Script\echarts.min.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1034/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

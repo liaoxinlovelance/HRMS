@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+      <link href="~/CSS/Denglu.css" rel="stylesheet" />
+   
+    <style type="text/css">
+        body {
+        background-color:rgba(0, 0, 0, 0.4);
+        }
+            .inputt::-webkit-input-placeholder {
+        color: #80eb3e;
+    }
+    #jiao {
+       color:#000;
+       float:left;
+       font-size:1.5em;
+       margin-top:36%;
+       margin-left:43%;
+       width:200px;
+    }
+        #bigdiv {
+           background-image:url("../Imges/1000042.jpg");
+        }
+
+    </style>
+</head>
+<body>
+    <div id="bigdiv">
+         <div id="container">
+            <p><a href="#"><marquee dirction="left" scrolldelay="1">执着追求的三个热血男子</marquee></a></p>
+        </div>
+    <div id="da">
+        @using (Html.BeginForm())
+        {
+            <div  class="kuan1">
+                
+                <div id="logo"></div>
+                <p id="Denlu">登  录</p>
+                <p id="gongsi">人员管理系统</p>
+                <p id="tishi">@ViewBag.yanzheng</p>
+              @*  <p id="spa"></p>*@
+                
+                <p id="spa1"></p>
+                <div id="srk">
+                    <form id="frm">
+                        <p class="tooo">用户名&nbsp;&nbsp;&nbsp;&nbsp;<b>|</b>&nbsp;<input id="email" class="inputt" autocomplete="off" type="text" name="Email" placeholder="请输入用户名！" /></p>
+                        <p class="tooo">密&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;&nbsp;&nbsp;<b>|</b>&nbsp;<input id="pwd" class="inputt" type="password" name="PassWord" placeholder="请输入密码！" /></p>
+
+                    </form>
+                </div>
+                <input id="dl" type="submit" value="登  录" />
+                </div>
+            
+        }
+       
+    </div>
+        </div>
+</body>
+<script src="~/Script/jquery-1.7.1.js"></script>
+    <script src="~/Script/JavaScript1.js"></script>
+</html>

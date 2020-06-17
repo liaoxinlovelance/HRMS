@@ -1,0 +1,123 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>chayue</title>
+     <style type="text/css">
+        #bigdiv {
+            background-image: url('../Imges/320433.jpg');
+            /*background-image: 200px;*/
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="bigdiv">
+   
+
+        <div>
+       @{   var Q = @ViewBag.list;
+           }
+        @for (int i = 0; i < Q.Count; i++)
+        {
+           
+            <div class="fd">
+             <ul id="@i">
+                <li><h4>标题：@Q[i].QDtitle（未签到者）</h4></li>
+                <li>时间:@Q[i].QDtime</li>
+              @*<li>姓名:@item.QDZ</li>*@
+                <li> <input type="hidden" class="@i" value="@ViewBag.listxm2 "/></li>
+                <li><input type="hidden"  value="@Q[i].QDZ"/></li>
+               
+
+              </ul>   
+                 <script>
+                     //得到两个数组
+                     var list1 = $(".@i").val();
+                     var arr1 = list1.split(",");
+                    
+                     var list2 = $(".@i").parent().next().children("input").val();
+                     var arr2 = list2.split(",");
+                     //var list2 = $("#shuzu").val();
+                     //var arr2 = list2.split(",");
+                     function getArrDifference(arr1, arr2) {
+                         return arr1.concat(arr2).filter(function (v, i, arr) {
+                             return arr.indexOf(v) === arr.lastIndexOf(v);
+                         });
+                     }
+                     //console.log(getArrDifference(arr1, arr2));
+                    
+                     $("#@i").append($("<li>" + getArrDifference(arr1, arr2) + "</li>"));
+
+                 </script>
+           
+               
+        </div>
+            
+        }
+          <div style="clear:both"></div>  
+    </div>   
+        </div>
+     <style type="text/css">
+        ul li {
+            list-style:none;
+        }
+        .fd {
+            width:240px;
+            height:130px;
+            border:1px #ff0000 solid;
+            float:left;
+        }
+    </style>
+</body>
+</html>
+@* 
+此处开始  1
+<div>
+       @{   var Q = @ViewBag.list;
+           }
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="fd">
+             <ul id="@i">
+                <li><h4>标题：@Q[i].QDtitle（未签到者）</h4></li>
+                <li>时间:@Q[i].QDtime</li>
+              @*<li>姓名:@item.QDZ</li>
+1
+*@
+@*此处开始2
+                <li><input type="hidden" class="@i" value="@ViewBag.listxm "/></li>
+                <li><input type="hidden"  value="@Q[i].QDZ"/></li>
+                
+
+              </ul>   
+                 <script>
+                     //得到两个数组
+                     var list1 = $(".@i").val();
+                     var arr1 = list1.split(",");
+
+                     var list2 = $(".@i").parent().next().children("input").val();
+                     var arr2 = list2.split(",");
+                     function getArrDifference(arr1, arr2) {
+                         return arr1.concat(arr2).filter(function (v, i, arr) {
+                             return arr.indexOf(v) === arr.lastIndexOf(v);
+                         });
+                     }
+                     //console.log(getArrDifference(arr1, arr2));
+                     $("#@i").append($("<li>" + getArrDifference(arr1, arr2) + "</li>"));
+
+                 </script>
+           
+               
+        </div>
+        }
+          <div style="clear:both"></div>  
+    </div> 
+2  
+*@

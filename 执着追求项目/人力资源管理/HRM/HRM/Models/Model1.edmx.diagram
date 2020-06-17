@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b028fb5faa0c44f9b64993efef29dedb" Name="关系图1" ZoomLevel="72">
+        <EntityTypeShape EntityType="HrmDBModel2.Apply_jiludan" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.Apply_Type" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.Chuchai" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.Dept_bumen" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.Module_quanxian" Width="1.5" PointX="1.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.Role_juese" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.Tiaoxiu" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.User_YG" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.Waiqing" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.View_Chuchai" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.View_QJlist" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.View_Tiaoxiu" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.View_Waiqin" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HrmDBModel2.View_YG" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="HrmDBModel2.FK__Apply_jil__Atten__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="HrmDBModel2.FK__Apply_jil__UserI__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="HrmDBModel2.FK__Chuchai__UserID__251C81ED" ManuallyRouted="false" />
+        <AssociationConnector Association="HrmDBModel2.FK__User_YG__DeptID__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="HrmDBModel2.FK__Module_qu__TypeI__108B795B" ManuallyRouted="false" />
+        <AssociationConnector Association="HrmDBModel2.FK__Role_jues__Modul__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="HrmDBModel2.FK__User_YG__RoleID__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="HrmDBModel2.FK__Tiaoxiu__UserID__1B9317B3" ManuallyRouted="false" />
+        <AssociationConnector Association="HrmDBModel2.FK__Waiqing__UserID__2057CCD0" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HrmDBModel2.qiandao" Width="1.5" PointX="8.875" PointY="11.125" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

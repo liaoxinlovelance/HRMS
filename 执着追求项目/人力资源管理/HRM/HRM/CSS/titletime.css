@@ -1,0 +1,44 @@
+﻿body {
+}
+#container {
+    width: 600px;
+    height: 80px;
+    margin: 0px auto;
+}
+
+/*neeeeoooon*/
+#container p {
+    text-align: center;
+    font-size: 3em;
+    margin: 0 0 0 0;
+}
+
+#container p a {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+
+#container p:nth-child(1) a {
+    color: #ffffff;
+    font-family: KaiTi;
+}
+
+#container p:nth-child(1) a {
+    -webkit-animation: bian 1.5s ease-in-out infinite alternate;
+    -moz-animation: bian 1.5s ease-in-out infinite alternate;
+    animation: bian 1.5s ease-in-out infinite alternate;
+}
+
+#container p a {
+    color: #20211f;
+}
+
+/*glow for webkit*/
+@-webkit-keyframes bian {
+    from {
+        /*text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;*/
+        text-shadow: 0 0 10px #da5619, 0 0 20px #e55213, 0 0 30px #f1830e, 0 0 40px #149c05, 0 0 70px #149c05, 0 0 80px #149c05, 0 0 100px #149c05, 0 0 150px #149c05;
+    }
+}

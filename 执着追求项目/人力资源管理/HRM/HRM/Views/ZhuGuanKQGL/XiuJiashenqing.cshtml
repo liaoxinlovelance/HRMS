@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>XiuJiashenqing</title>
+       <link href="~/UI/themes/icon.css" rel="stylesheet" />
+    <link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.11.2.min.js"></script>
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+    
+</head>
+<body>
+    <script type="text/javascript">
+        $(function () {
+            $('#QJlist').datagrid({
+                url: 'ZhuGuanKQGL/QJlist',
+                columns: [[
+                    { field: 'ApplyID', title: '序号', width: 100, align: 'center' },
+                    { field: 'UserName', title: '申请人', width: 100, align: 'center' },
+                    { field: 'DeptID', title: '部门', width: 100, align: 'center' },
+                    { field: 'Applykaishi', title: '起始日期', width: 100, align: 'center' },
+                     { field: 'Applyjieshu', title: '结束日期', width: 100, align: 'center' },
+                    { field: 'Applyyuanyin', title: '合计时长', width: 100, align: 'center' },
+                    { field: 'Applyyuanyin', title: '休假事由', width: 100, align: 'center' }
+                     , { field: 'ApplyType', title: '请假类型', width: 100, align: 'center' }
+                    , { field: 'ShenHe', title: '审核', width: 100, align: 'center' }
+                ]]
+
+            });
+        })
+    </script>
+    <div id="QJlist">
+        
+    </div>
+</body>
+</html>

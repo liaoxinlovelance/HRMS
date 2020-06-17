@@ -1,0 +1,147 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>休假审核</title>
+     <link href="~/UI/themes/icon.css" rel="stylesheet" />
+    <link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.11.2.min.js"></script>
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+    <style type="text/css">
+        #yijian {
+            width: 200px;
+            height: 80px;
+        }
+          #bigdiv {
+            background-image: url('../Imges/320433.jpg');
+            background-image: 200px;
+            width:100%;
+            height:100%;
+        }
+        ul li {
+         list-style:none;
+        }
+        #win {
+            width: 400px;
+            height: 250px;
+            margin: 0 auto;
+        }
+
+            #win span {
+                margin: 2px 5px;
+                width: 230px;
+                height: 40px;
+                padding-left: 20px;
+                display: block;
+                line-height: 50px;
+            }
+
+                #win span a {
+                    padding-left: 50px;
+                }
+
+        #yijian {
+            margin-left: 10px;
+        }
+
+        #qd {
+            margin: 10px 60px;
+        }
+    </style>
+
+    <div id="bigdiv">
+        <div id="win">
+            <p></p>
+            <span>@Html.RadioButton("rad1", "校区同意", true) 校区同意 <a>@Html.RadioButton("rad1", "校区不同意") 校区不同意</a></span>
+            <p>意见:<input type="text" id="yijian" name="yijian" /></p>
+            @*<p>
+                <input type="button" value="确定" id="qd" /><input type="button" value="取消" id="qx" />
+            </p>*@
+        </div>
+        <table id="XiuJiaList"></table>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#XiuJiaList").datagrid({
+                url: '/KHguanli/XiuJiaList',
+                columns: [[
+                    { field: 'ApplyID', title: '序号', width: 100, align: 'center', sortable: true },
+                    { field: 'UserName', title: '申请人', width: 100, align: 'center' },
+                    { field: 'DeptName', title: '部门', width: 100, align: 'center' },
+                    { field: 'kaishi', title: '请假开始', width: 200, align: 'center', sortable: true },
+                    { field: 'jieshu', title: '请假结束', width: 200, align: 'center', sortable: true },
+                    { field: 'Applyyuanyin', title: '请假原因', width: 300, align: 'center' },
+                    { field: 'ApplyType', title: '类型', width: 100, align: 'center' },
+                    {
+                        field: 'XiaoquShenHe', title: '审核', width: 100, align: 'center', formatter: function (value, row, index) {
+                            return "<button onclick='dakaichuangti()'  id='" + row.ApplyID + "'>" + value + "<script>  function dakaichuangti() {$('#win').dialog('open'); }" + " <" + "/script></button> ";
+                        }
+                    }
+                ]],
+                fitColumns: true,
+                pagination: true,
+                pageNumber: 1,
+                pageSize: 5,
+                pageList: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+
+            })
+
+
+            //窗口面板tb
+            $('#win').dialog({
+                title: '审核',
+                modal: true,
+                closed: true,
+                width: 280,
+                height: 260,
+                collapsed: false,
+                buttons: [{
+                    text: '确定',
+                    handler: function () {
+                        //获取要审核的记录编号
+                        var row = $("#XiuJiaList").datagrid("getSelected");
+                        if (row.length == 0) {
+                            $.messager.alert("提示", "请选择要审核的人员")
+                        } else {
+                            var id = row.ApplyID;
+                            var ra = $('[name="rad1"]:checked').val();
+                            console.info(ra);
+                            $.ajax({
+                                url: "/KHguanli/XiuJiaShenHe",
+                                type: 'post',
+                                data: {
+                                    'id': id,
+                                    'rad': ra,
+                                },
+                                success: function (result) {
+                                    $("#XiuJiaList").datagrid("reload");
+                                    $("#XiuJiaList").datagrid("clearSelections");
+                                    $('#win').dialog('close');
+                                }
+
+                            })
+                        }
+
+
+
+                    }
+                }, {
+                    text: '关闭',
+                    handler: function () {
+
+                    }
+                }]
+            });
+
+        })
+    </script>
+</body>
+</html>

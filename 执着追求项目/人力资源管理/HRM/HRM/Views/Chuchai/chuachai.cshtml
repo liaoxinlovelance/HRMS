@@ -1,0 +1,124 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>出差申请</title>
+      <link href="~/UI/themes/icon.css" rel="stylesheet" />
+    <link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+    <script src="~/Script/jquery-1.11.2.min.js"></script>
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+    
+     <script>
+         $(function () {
+             //对话框的表单地址
+
+             $("#listchuchai").datagrid(
+                 {
+                     url: "/Chuchai/listww",
+                     fitColumns: true,
+                     pagination: true,
+                     sortName: "ApplyID",//定义默认排序的字段
+                     sortOrder: "asc",//定义默认的排序方法
+                     pageSize: 3,//默认显示几条数据
+                     pageNumber: 1,//默认页面
+                     pageList: [3, 6, 9],//显示几条数据的集合，第一个必须是默认的
+                     //striped:true,
+                     columns: [[
+                           { field: 'ck', checkbox: true },
+          { field: 'ApplyID', title: '序号', width: 100, sortable: true },
+            { field: 'UserName', title: '姓名', width: 100, sortable: true },
+            { field: 'DeptName', title: '部门', width: 100, sortable: true },
+           { field: 'kaishi', title: '起始时间', width: 100, sortable: true },
+            { field: 'jieshu', title: '截止时间', width: 100, sortable: true },
+          { field: 'Applydizhi', title: '外勤地', width: 100 },
+          { field: 'ApplyLiyou', title: '外勤事由', width: 100, align: 'right' }
+          , { field: 'BumenShenHe', title: '部门审核', width: 100, align: 'right' },
+          { field: 'XiaoquShenHe', title: '校区审核', width: 100, align: 'right', },
+
+                     ]], toolbar: [
+
+                    '-', {
+                        text: '<input type="text" name="cname"  id="cname"/>',
+                    }, {
+                        text: '查询',
+                        iconCls: 'icon-search',
+                        handler: function () {
+                            var cname = $("#cname").val();
+                            //通过load方法进行传值
+                            $("#listchuchai").datagrid('load', { cname: cname });
+                        }
+                    }]
+
+                 })
+
+             //$('#type').combobox({
+             //    url: "/Staff/qjtype",
+             //    valueField: 'AttendanceID',
+             //    textField: 'AttendanceName',
+             //});
+
+             //申请请假
+             $("#tijiao").click(function () {
+                 $('#f1').form('submit', {
+                     url: "/Chuchai/Add",
+                     onSubmit: function () {
+                     },
+                     success: function (data) {
+                         $.messager.alert("提示", data);
+                         $("#f1").form("clear");
+
+
+                     }, error: function () {
+
+                     }
+                 });
+             })
+
+
+
+
+         })
+
+         $(function () {
+
+         })
+
+    </script>
+    <style type="text/css">
+          #bigdiv {
+            background-image: url('../Imges/320433.jpg');
+            background-image: 200px;
+            width:100%;
+            height:100%;
+        }
+        ul li {
+         list-style:none;
+        }
+      
+    </style>
+    <div id="bigdiv">
+    <div id="listchuchai">
+    </div><div id="tianjia" style="margin-left:500px;margin-top:20px;">
+        <form id="f1" @*action="/Staff/Add"*@  method="post" enctype="multipart/form-data" >
+    <p><span style="font-size:25px">申请人：&nbsp;</span><span style="font-size:25px">@ViewBag.name</span></p>
+              <p><span style="font-size:20px">出差目的地地:</span>&nbsp;&nbsp;&nbsp;<span><input id="dizhi" name="dizhi" type="text" /></span></p>
+             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:20px">出差事由：&nbsp;</span><span><input style="width:200px;height:100px;" class="easyui-textbox" multiline="true"   type="text" name="liyou" id="liyou" /></span></p>
+             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:20px">出差日期:</span>&nbsp;&nbsp;&nbsp;<span><input id="kaishi" class="easyui-datebox" required="required" name="kaishi" type="text" /></span>到<span><input  id="jiashu" class="easyui-datebox" required="required" name="jieshu" type="text" /></span></p>
+               <p><span style="font-size:20px">预计出差结果：</span><span><input style="width:200px;height:100px;" class="easyui-textbox" multiline="true"   type="text" name="jieguo" id="jieguo" /></span></p>
+                 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:20px">所需支持：</span><span><input style="width:200px;height:100px;" class="easyui-textbox" multiline="true"   type="text" name="zhichi" id="zhichi" /></span></p>
+            <input style="margin-left:130px;width:90px;" type="submit" id="tijiao"  value="提交" />
+             </form>
+          </div>
+    </div>
+</body>
+</html>
+
+

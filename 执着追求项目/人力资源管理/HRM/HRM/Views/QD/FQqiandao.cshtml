@@ -1,0 +1,278 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FQqiandao</title>
+     <link href="~/UI/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/UI/themes/icon.css" rel="stylesheet" />
+    <script src="~/UI/jquery-1.11.2.min.js"></script>
+    <script src="~/UI/jquery.easyui.min.js"></script>
+    <script src="~/UI/locale/easyui-lang-zh_CN.js"></script>
+        <style type="text/css">
+        #bigdiv {
+            background-image: url('../Imges/320433.jpg');
+            /*background-image: 200px;*/
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="bigdiv">
+    <h3><input type="button" id="faqiqiandao"value="发起签到"/></h3>
+    <h3><input type="button" id="jieshuqiandao"value="结束签到"/></h3>
+   
+   <div id="win">
+       @using (Html.BeginForm("FQQD", "QD", FormMethod.Post))
+       {
+       <h4>签到标题</h4>
+       <input type="hidden" id="QDid" name="QDid" />
+       <input type="hidden" id="QDZ" name="QDZ" />
+       <input type="hidden" id="QDtime" name="QDtime" />
+       <input type="hidden" id="FQQDZ" name="FQQDZ" value="@ViewBag.name"/>
+       <input type="hidden" id="QDstate" name="QDstate" value="true"/>
+       <input type="text" id="QDtitle" name="QDtitle" style="width:450px; height:50px;"/>
+        
+       <input type="submit" id="FQQD" style="width:85px; height:50px;"value="发起签到"/>
+       }  
+       </div>    
+   
+    <div id="win2">
+        @using (Html.BeginForm("jieshuqiandao", "QD", FormMethod.Post))
+       {
+      
+       <input type="hidden" id="QDid2" name="QDid" />
+       @*<input type="hidden" id="QDZ2" name="QDZ" />*@
+       <input type="hidden" id="QDtime2" name="QDtime" />
+       <input type="hidden" id="FQQDZ2" name="FQQDZ"/>
+       <input type="hidden" id="QDstate2" name="QDstate"/>
+       <input type="hidden" id="QDtitle2" name="QDtitle" />
+       <input type="hidden" id="QDZ2" name="QDZ" />
+      <p style="text-align:center"> <input type="submit" id="Jieshu"value="确定"/>
+       <input  type="button" id="quxiaowin2" value="取消"/>  </p>  
+       }  
+    </div>
+     <div id="win3">
+        @using (Html.BeginForm("chongkaiqiandao", "QD", FormMethod.Post))
+        {
+       
+       <input type="hidden" id="QDid3" name="QDid" />
+       @*<input type="hidden" id="QDZ2" name="QDZ" />*@
+       <input type="hidden" id="QDtime3" name="QDtime" />
+       <input type="hidden" id="FQQDZ3" name="FQQDZ"/>
+       <input type="hidden" id="QDstate3" name="QDstate"/>
+       <input type="hidden" id="QDtitle3" name="QDtitle" />
+       <input type="hidden" id="QDZ3" name="QDZ"/>
+        <p style="text-align:center"><input type="submit" id="chongkai" value="确定"/>
+       <input  type="button" id="quxiaowin3" value="取消"/>    </p>
+       }  
+    </div>
+     <div id="win4">
+        
+       
+       <input type="text" id="QDid4" name="QDid" />
+       
+       <p style="text-align:center" ><input type="button"" id="shanchu" value="确定"/>
+          <input  type="button" id="quxiaowin4" value="取消"/>  </p>  
+       
+    </div>
+
+    <div id="win1">         
+     <table id="dg">
+        
+     </table>    
+       @* <a  href='#' onclick='shanchu();return false' >删除签到</a>*@
+       @*  <script>*@
+             @*$("#shanchu").click(function () {
+                 var id = $("#QDid4").val();
+                 $.ajax({
+                     type: "post",
+                     url: "/Home/shanchuqiandao",
+                     data: { "id": id },
+                     success: function (result) {
+                         $.messager.alert("提示", result);
+                         //删除成功后刷新列表
+                         $("#dg").datagrid("load");
+                     },
+                     error: function (result) {
+                         $.messager.alert("提示", result);
+                     }
+                 })
+             });*@
+      @* </script>*@
+   </div>  
+        </div>
+  <script>
+      $(function () {
+          var t = $("#FQQDZ").val();
+          console.info(t)
+          $('#win').window({
+              title: "发起新签到",
+              width: 600,
+              height: 150,
+              modal: true,
+              closed: true,
+              collapsible: false,
+              minimizable: false,
+              maximizable: false
+          });
+          $('#win2').window({
+              title: "您确定要结束吗？",
+              width: 220,
+              height: 90,
+              modal: true,
+              closed: true,
+              collapsible: false,
+              minimizable: false,
+              maximizable: false
+          });
+          $("#quxiaowin2").click(function () {
+              $('#win2').window('close');
+          });
+          $('#win3').window({
+              title: "您确定要重开签到吗？",
+              width: 220,
+              height: 90,
+              modal: true,
+              closed: true,
+              collapsible: false,
+              minimizable: false,
+              maximizable: false
+          });
+          $("#quxiaowin3").click(function () {
+              $('#win3').window('close');
+          });
+          $('#win4').window({
+              title: "您确定要删除该签到吗？",
+              width: 220,
+              height: 90,
+              modal: true,
+              closed: true,
+              collapsible: false,
+              minimizable: false,
+              maximizable: false
+          });
+          $("#quxiaowin4").click(function () {
+              $('#win4').window('close');
+          });
+          $('#win1').window({
+              title: "结束正在进行的签到",
+              width: 800,
+              height: 500,
+              modal: true,
+              closed: true,
+              collapsible: false,
+              minimizable: false,
+              maximizable: false
+          });
+          $("#faqiqiandao").click(function () {
+              $('#win').window('open');
+          });
+          $("#jieshuqiandao").click(function () {
+              $('#win1').window('open');
+          });
+          $('#dg').datagrid({
+              url: '/QD/getqiandaostate',
+              fitColumns: true,
+              singleSelect: true,
+
+              columns: [[
+                  { field: 'QDid', title: '编号', width: 100, hidden: true },
+                  { field: 'QDZ', title: '签到者', width: 100, hidden: true },
+                  { field: 'QDtitle', title: '签到标题', width: 150 },
+                  { field: 'shijian', title: '签到时间', width: 150 },
+                  { field: 'FQQDZ', title: '发起签到人', width: 100 },
+                  {
+                      field: 'QDstate', title: '签到状态', width: 300, align: 'right', formatter: function (value, row, index) {
+                          if (row.user) {
+                              return row.user.name;
+                          } else {
+                              if (value == true) {
+                                  return "<a  href='#' onclick='jieshu1();return false' >结束签到</a>";
+
+
+                              }
+                              else {
+                                  return "签到已结束 &nbsp&nbsp" + "<a  href='#' onclick='jieshu2();return false' >重开签到</a>  &nbsp&nbsp" + "<a  href='#' onclick='shanchu();return false' >删除签到</a>";
+                              }
+
+
+                          }
+                      }
+                  }
+              ]],
+              fixed: true
+
+          });
+
+
+      });
+
+  </script>
+   
+    <script>
+        function jieshu1() {
+
+            var rows = $("#dg").datagrid("getSelected");
+            $("#QDstate2").val("false");
+            $("#QDid2").val(rows.QDid);
+            $("#QDtime2").val(rows.shijian);
+            $("#QDtitle2").val(rows.QDtitle);
+            $("#FQQDZ2").val(rows.FQQDZ);
+            $("#QDZ2").val(rows.QDZ);
+
+            $('#win2').window('open');
+
+
+            //$.messager.alert('提示', rows.QDid + rows.QDtitle + rows.shijian + rows.FQQDZ);
+        }
+        function jieshu2() {
+
+            var rows = $("#dg").datagrid("getSelected");
+            $("#QDstate3").val("true");
+            $("#QDid3").val(rows.QDid);
+            $("#QDtime3").val(rows.shijian);
+            $("#QDtitle3").val(rows.QDtitle);
+            $("#FQQDZ3").val(rows.FQQDZ);
+            $("#QDZ3").val(rows.QDZ);
+
+            $('#win3').window('open');
+
+
+            //$.messager.alert('提示', rows.QDid + rows.QDtitle + rows.shijian + rows.FQQDZ);
+        }
+        function shanchu() {
+
+            var rows = $("#dg").datagrid("getSelected");
+
+            $("#QDid4").val(rows.QDid);
+
+            $('#win4').window('open');
+            //var cid = rows.QDid;          
+            //$.messager.alert('提示', rows.QDid + rows.QDtitle + rows.shijian + rows.FQQDZ);
+        }
+        $("#shanchu").click(function () {
+            var id = $("#QDid4").val();
+            $.ajax({
+                type: "post",
+                url: "/QD/shanchuqiandao",
+                data: { "id": id },
+                success: function (result) {
+                    $.messager.alert("提示", result);
+                    //删除成功后刷新列表
+                    $("#dg").datagrid("load");
+                },
+                error: function (result) {
+                    $.messager.alert("提示", result);
+                }
+            })
+        });
+           </script>  
+</body>
+
+</html>

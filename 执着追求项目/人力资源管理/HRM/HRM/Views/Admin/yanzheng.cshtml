@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>yanzheng</title>
+</head>
+<body>
+  
+      <style type="text/css">
+        ul li {
+       list-style:none;
+        }
+        #yanzheng {
+        margin-left:500px;
+        }
+    </style>
+      <div id="yanzheng" style="width:500px; text-align:center;">
+            @using (Html.BeginForm("yanzheng","Admin",FormMethod.Post))
+        {
+          <br />
+           <br />
+           <br />
+           <br />
+           <br />
+           <br />
+          <ul>
+              <li><span style="font-size:20px;"> 问题:</span><span style="font-size:20px;"> @ViewBag.mibao</span></li><br /><br />
+                <li><span style="font-size:15px;">请输入密保答案:</span>&nbsp;<input type="text" style="width:200px;" name="pwd1" /></li>
+              <br />
+                <li><span id="tishi" style="color:red">@ViewBag.tishi</span></li>
+               <li> <input id="dl" type="submit" value="登  录"/></li>
+            </ul>
+            
+        }
+         
+        </div>
+      
+</body>
+</html>
